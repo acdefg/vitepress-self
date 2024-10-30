@@ -44,15 +44,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      # 部署
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          # GitHub Pages 读取的分支
-          branch: main
-          # 静态文件所在目录
-          folder: ./
-
         #将文件上传至云服务器  
       - name: ssh-scp-deploy
         uses: marcodallasanta/ssh-scp-deploy@v1.2.0
