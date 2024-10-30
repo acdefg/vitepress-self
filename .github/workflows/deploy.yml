@@ -44,12 +44,6 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
 
-      # 打包静态文件
-      - name: Build
-        env:
-          APP_BASE_PATH: /${{ github.repository }}
-        run: npm install && npm run build && 
-
       # 部署
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
