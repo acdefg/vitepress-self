@@ -58,8 +58,6 @@ jobs:
           branch: main
           # 静态文件所在目录
           folder: dist
-          git-config-name: abc55667788
-          git-config-email: ljv0606@outlook.com
 
         #将文件上传至云服务器  
       - name: ssh-scp-deploy
