@@ -26,7 +26,7 @@ env:
 jobs:
   build-and-deploy:
     # 服务器环境：最新版 ubuntu
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [20]
