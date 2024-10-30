@@ -25,7 +25,7 @@ env:
 jobs:
   build-and-deploy:
     # 服务器环境：最新版 ubuntu
-    runs-on: ubuntu-latest
+    runs-on: centos-latest
     strategy:
       matrix:
         node-version: [20]
@@ -36,24 +36,18 @@ jobs:
         with:
           fetch-depth: 0
 
-      # 安装 pnpm
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
-
       # 设置 node 版本
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
+          cache: 'npm'
 
       # 打包静态文件
       - name: Build
         env:
           APP_BASE_PATH: /${{ github.repository }}
-        run: pnpm install && pnpm run build
+        run: npm install && npm run build && 
 
       # 部署
       - name: Deploy
@@ -63,3 +57,22 @@ jobs:
           branch: gh-pages
           # 静态文件所在目录
           folder: dist
+          git-config-name: abc55667788
+          git-config-email: ljv0606@outlook.com
+
+        #将文件上传至云服务器  
+      - name: ssh-scp-deploy
+        uses: marcodallasanta/ssh-scp-deploy@v1.2.0
+        with:
+          #本地打包后的文件目录
+          local: docs/.vitepress/dist
+          #上传至远程服务器的目标目录
+          remote: /home/ubuntu/
+          #远程服务器的地址
+          host: ${{ secrets.REMOTE_HOST }}
+          #远程服务器的用户名
+          user: ${{ secrets.REMOTE_USERNAME }}
+          #远程服务器的密钥（与密码二者选其一）
+          password: ${{secrets.PASSWORD }}
+          #上传后执行的脚本
+          post_upload: sudo nginx -s reload
