@@ -67,7 +67,7 @@ jobs:
           #本地打包后的文件目录
           local: docs/.vitepress/dist
           #上传至远程服务器的目标目录
-          remote: /home/ubuntu/
+          remote: /home/vitepress
           #远程服务器的地址
           host: ${{ secrets.REMOTE_HOST }}
           #远程服务器的用户名
