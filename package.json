@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+"
+    "url": "git+https://github.com/abc55667788/vitepress-blog.git"
   },
   "author": "cici",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/maomao1996/vitepress-nav-template/issues"
+    "url": "https://github.com/abc55667788/vitepress-blog/issues"
   },
-  "homepage": "https://github.com/maomao1996/vitepress-nav-template#readme",
+  "homepage": "https://github.com/abc55667788/vitepress-blog/blob/main/README.md",
   "devDependencies": {
     "@femm/prettier": "^1.1.0",
     "@femm/tailwind-config": "^1.0.0",
