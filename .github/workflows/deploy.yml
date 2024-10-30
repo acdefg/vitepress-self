@@ -29,7 +29,7 @@ jobs:
     runs-on: windows-latest
     strategy:
       matrix:
-        node-version: [20,18,14]
+        node-version: [20]
     steps:
       # 拉取代码
       - name: Checkout
