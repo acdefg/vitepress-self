@@ -1,0 +1,2 @@
+# vitepress-self
+deploly files
