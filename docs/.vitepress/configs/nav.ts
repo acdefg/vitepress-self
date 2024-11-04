@@ -5,7 +5,9 @@ export const nav: DefaultTheme.Config['nav'] = [
   {
     text: '页面分类',
     items: [
-      { text: 'Bug万象集', link: '/categories/issues/index', activeMatch: '/categories/issues/' },
+      { text: 'ubuntu修缮记录', link: '/categories/ubuntu/index', activeMatch: '/categories/ubuntu/' },
+      { text: '提效记录', link: '/categories/提效技能/index', activeMatch: '/categories/提效技能/' },
+      { text: '数字IC', link: '/categories/digital/index', activeMatch: '/categories/digital/' },
       { text: '"杂碎"逆袭史', link: '/categories/fragments/index', activeMatch: '/categories/fragments/' },
     ],
     activeMatch: '/catagory/'
