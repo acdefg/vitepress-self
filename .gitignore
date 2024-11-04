@@ -16,6 +16,7 @@ cache
 .temp
 .tmp
 .turbo
+md_add_yaml
 
 # log and lock files
 *.log
