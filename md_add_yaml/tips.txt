@@ -1,0 +1,10 @@
+在终端中运行以下命令，传入文件和可选参数：
+python add_yaml.py --isTop=true --tags=SQL,SQL优化 file1.md file2.md
+你可以根据需要更改 --isTop 的值为 true 或 false，并在 --tags 后提供以逗号分隔的标签。
+
+示例：
+使用默认值：
+python add_yaml.py file1.md file2.md
+设置 isTop 为 true，并添加标签：
+
+python add_yaml.py --isTop=true --tags=Python,程序设计 file1.md

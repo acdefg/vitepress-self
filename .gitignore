@@ -8,7 +8,7 @@
 node_modules
 
 # compiled output
-dist
+#dist
 dist-dev
 build
 cache
@@ -16,7 +16,7 @@ cache
 .temp
 .tmp
 .turbo
-md_add_yaml
+#md_add_yaml
 
 # log and lock files
 *.log
