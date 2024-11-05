@@ -31,3 +31,6 @@ yarn.lock
 .DS_Store
 
 # user-specific files
+guide.md
+markdown-examples.md
+api-examples.md
