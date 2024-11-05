@@ -7,6 +7,7 @@ categories:
   - ubuntu
 tags:
   - tool
+  - Appimage
 ---
 
 # Appimage格式文件安装
