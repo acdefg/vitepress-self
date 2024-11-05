@@ -68,9 +68,9 @@ jobs:
         uses: marcodallasanta/ssh-scp-deploy@v1.2.0
         with:
           #本地打包后的文件目录
-          local: dist
+          local: ./dist
           #上传至远程服务器的目标目录
-          remote: /home/vitepress
+          remote: /home/vitepress/dist
           #远程服务器的地址
           host: ${{ secrets.REMOTE_HOST }}
           #远程服务器的用户名
