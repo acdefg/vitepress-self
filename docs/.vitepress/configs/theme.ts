@@ -56,6 +56,7 @@ export const themeConfig: DefaultTheme.Config = {
 
   // 导航栏右侧社交链接配置
   socialLinks: [
+    //{icon: { svg: 'svg icon'},link: 'rss url'},
     { icon: 'github', link: 'https://github.com/abc55667788' },
     {
       icon: {

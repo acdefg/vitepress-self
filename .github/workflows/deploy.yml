@@ -38,10 +38,10 @@ jobs:
           fetch-depth: 0
 
       # 安装 pnpm
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
+      - name: Install npm
+        uses: npm/action-setup@v3
         with:
-          version: 8
+          version: 10
 
       # 设置 node 版本
       - name: Use Node.js ${{ matrix.node-version }}
@@ -68,7 +68,7 @@ jobs:
         uses: marcodallasanta/ssh-scp-deploy@v1.2.0
         with:
           #本地打包后的文件目录
-          local: ./dist
+          local: ./dist/*
           #上传至远程服务器的目标目录
           remote: /home/vitepress/dist
           #远程服务器的地址
