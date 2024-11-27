@@ -11,7 +11,6 @@ tags:
 ---
 
 # Appimage格式文件安装
-
 以 obsidian 的安装为例：
 ## 运行
 为下载好的 AppImage文件赋予可执行权限：
