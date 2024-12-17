@@ -72,4 +72,4 @@ jobs:
           #远程服务器的密钥（与密码二者选其一）
           password: ${{secrets.PASSWORD }}
           #上传后执行的脚本
-          post_upload: sudo nginx -s reload
+          #post_upload: sudo nginx -s reload
