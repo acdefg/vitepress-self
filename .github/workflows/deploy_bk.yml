@@ -91,3 +91,9 @@ jobs:
           password: ${{secrets.PASSWORD }}
           #上传后执行的脚本
           post_upload: sudo nginx -s reload
+
+      - name: Debug SSH Connection
+        run: |
+          echo "${{ secrets.PASSWORD }}" > private.key
+          chmod 600 private.key
+          ssh -vvv -i private.key -p 22 ${{ secrets.REMOTE_USERNAME }}@${{ secrets.REMOTE_HOST }} "echo Connected!"
