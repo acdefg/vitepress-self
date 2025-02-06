@@ -37,7 +37,7 @@ jobs:
 
       - name: Build
         env:
-          APP_BASE_PATH: /${{ github.repository }}
+          APP_BASE_PATH: /
         run: pnpm install --no-frozen-lockfile && pnpm run build
 
       # 新增：部署前清理服务器旧文件
