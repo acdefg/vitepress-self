@@ -40,6 +40,13 @@ jobs:
           APP_BASE_PATH: /
         run: pnpm install --no-frozen-lockfile && pnpm run build
 
+      - name: Inspect Build Output
+        run: |
+          echo "======= Directory Structure ======="
+          ls -R dist
+          echo "======= RSS File Check ======="
+          [ -f dist/feed.rss ] && echo "RSS exists" || echo "RSS missing"
+
       # 新增：部署前清理服务器旧文件
       - name: Clean remote directory
         uses: appleboy/ssh-action@master
