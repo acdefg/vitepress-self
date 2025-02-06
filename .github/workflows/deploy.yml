@@ -52,6 +52,13 @@ jobs:
             sudo rm -rf /home/vitepress/dist/*
             # 保险措施：如果目录被误删则重建
             sudo mkdir -p /home/vitepress/dist
+            
+      - name: Debug SSH Connection
+        run: |
+          echo "${{ secrets.PASSWORD }}" > private.key
+          chmod 600 private.key
+          ssh -vvv -i private.key -p 22 ${{ secrets.REMOTE_USERNAME }}@${{ secrets.REMOTE_HOST }} "echo Connected!"
+
 
       # 优化后的部署步骤
       - name: Rsync Deployments Action
@@ -66,12 +73,7 @@ jobs:
           remote_user: ${{ secrets.REMOTE_USERNAME }}
           remote_key:  ${{ secrets.PASSWORD }}
 
-      - name: Debug SSH Connection
-        run: |
-          echo "${{ secrets.PASSWORD }}" > private.key
-          chmod 600 private.key
-          ssh -vvv -i private.key -p 22 ${{ secrets.REMOTE_USERNAME }}@${{ secrets.REMOTE_HOST }} "echo Connected!"
-
+      
       - name: Reload Nginx
         uses: appleboy/ssh-action@master
         with:
