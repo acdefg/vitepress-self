@@ -18,5 +18,5 @@ import { NAV_DATA1 } from './data'
 <br />
 
 ::: tip
-笔记搬运中
+笔记搬运中...
 :::
