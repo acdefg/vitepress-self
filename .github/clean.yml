@@ -1,0 +1,21 @@
+name: Clean Old Files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  clean：
+    runs-on: ubuntu-latest
+    steps:
+    - name: Connect to Server
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.Servers_HOST }}
+        username: ${{ secrets.Servers_USERNAME }}
+        password: ${{ secrets.Servers_PASSWORD }}
+        port: 22
+        remote_path: /path/to/remote/directory
+        command: |
+          rm -rf /path/to/remote/directory/old-file*

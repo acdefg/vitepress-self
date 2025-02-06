@@ -59,7 +59,7 @@ jobs:
 
       # 优化后的部署步骤
       - name: Deploy via SSH
-        uses: burnett01/rsync-deployments@5.2.3 # 更可靠的文件同步方案
+        uses: burnett01/rsync-deployments@5.2.2 # 更可靠的文件同步方案
         with:
           switches: -avz --delete # 自动删除冗余文件
           path: ./dist/
