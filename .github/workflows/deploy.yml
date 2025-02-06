@@ -1,72 +1,78 @@
 name: GitHub Actions Build and Deploy
 
-# 触发条件
 on:
-  # 手动触发
-  workflow_dispatch:
-  # push 到指定分支
+  workflow_dispatch: # 手动触发开关（已启用）
   push:
-    branches:
-      - main
-    # 只在下列路径变更时触发
-    paths:
+    branches: [ main ]
+    paths: 
       - 'docs/**'
       - 'package.json'
       - '.github/deploy.yml'
 
-# 设置权限
 permissions:
   contents: write
 
-# 设置上海时区
 env:
   TZ: Asia/Shanghai
 
-# 任务
 jobs:
   build-and-deploy:
-    # 服务器环境：最新版 ubuntu
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [20]
+    
     steps:
-      # 拉取代码
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      # 安装 pnpm
       - name: Install pnpm
         uses: pnpm/action-setup@v3
         with:
           version: 8
 
-      # 设置 node 版本
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
-  
 
-      # 打包静态文件
       - name: Build
         env:
           APP_BASE_PATH: /${{ github.repository }}
-        run: pnpm install --no-frozen-lockfile&& pnpm run build
+        run: pnpm install --no-frozen-lockfile && pnpm run build
 
-      - name: ssh-scp-deploy
-        uses: marcodallasanta/ssh-scp-deploy@v1.2.0
+      # 新增：部署前清理服务器旧文件
+      - name: Clean remote directory
+        uses: appleboy/ssh-action@master
         with:
-          local: ./dist/*
-          remote: /home/vitepress/dist
           host: ${{ secrets.REMOTE_HOST }}
-          user: ${{ secrets.REMOTE_USERNAME }}
+          username: ${{ secrets.REMOTE_USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          pre_upload: |  # 新增预清理步骤
-            rm -rf /home/vitepress/dist/* || true
-            mkdir -p /home/vitepress/dist
-          post_upload: sudo nginx -s reload
-      
+          script: |
+            # 保留目录结构，仅删除内容
+            sudo rm -rf /home/vitepress/dist/*
+            # 保险措施：如果目录被误删则重建
+            sudo mkdir -p /home/vitepress/dist
+
+      # 优化后的部署步骤
+      - name: Deploy via SSH
+        uses: burnett01/rsync-deployments@5.2.3 # 更可靠的文件同步方案
+        with:
+          switches: -avz --delete # 自动删除冗余文件
+          path: ./dist/
+          remote-path: /home/vitepress/dist/
+          remote-host: ${{ secrets.REMOTE_HOST }}
+          remote-user: ${{ secrets.REMOTE_USERNAME }}
+          remote-key: ${{ secrets.PASSWORD }}
+          remote-port: 22
+
+      - name: Reload Nginx
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          script: sudo nginx -s reload
