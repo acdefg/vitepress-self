@@ -12,56 +12,7 @@ export const NAV_DATA: NavData[] = [
       {
         icon: '/logo.png',
         title: '数字IC',
-        desc: '常见模块以及架构',
         link: '../categories/digital/index',
-      },
-      {
-        icon: '/logo.png',
-        title: '前端思维导图',
-        desc: '用思维导图的方式总结个人所学知识',
-        link: 'https://mindmap.fe-mm.com',
-      },
-      {
-        icon: 'https://qwerty.fe-mm.com/apple-touch-icon.png',
-        title: 'Qwerty Learner',
-        desc: '为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件',
-        link: 'https://qwerty.fe-mm.com',
-      },
-    ],
-  },
-  {
-    
-    title: '常用网站',
-    items: [
-      {
-        icon: 'https://caniuse.com/img/favicon-128.png',
-        title: 'Can I use',
-        desc: '前端 API 兼容性查询',
-        link: 'https://caniuse.com',
-      },
-      {
-        icon: 'https://tinypng.com/images/apple-touch-icon.png',
-        title: 'TinyPNG',
-        desc: '在线图片压缩工具',
-        link: 'https://tinypng.com',
-      },
-      {
-        icon: 'https://devtool.tech/logo.svg',
-        title: '开发者武器库',
-        desc: '开发者武器库，做开发者最专业最好用的专业工具箱',
-        link: 'https://devtool.tech',
-      },
-      {
-        icon: 'https://tool.lu/favicon.ico',
-        title: '在线工具',
-        desc: '开发人员的工具箱',
-        link: 'https://tool.lu',
-      },
-      {
-        icon: '/icons/json-cn.ico',
-        title: 'Json 中文网',
-        desc: 'JSON 在线解析及格式化验证',
-        link: 'https://www.json.cn',
       },
     ],
   },
@@ -100,4 +51,47 @@ export const NAV_DATA: NavData[] = [
     ],
   },
 
+  {
+    
+    title: '常用网站',
+    items: [
+      {
+        icon: 'https://qwerty.fe-mm.com/apple-touch-icon.png',
+        title: 'Qwerty Learner',
+        desc: '为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件',
+        link: 'https://qwerty.fe-mm.com',
+      },
+      {
+        icon: 'https://caniuse.com/img/favicon-128.png',
+        title: 'Can I use',
+        desc: '前端 API 兼容性查询',
+        link: 'https://caniuse.com',
+      },
+      {
+        icon: 'https://tinypng.com/images/apple-touch-icon.png',
+        title: 'TinyPNG',
+        desc: '在线图片压缩工具',
+        link: 'https://tinypng.com',
+      },
+      {
+        icon: 'https://devtool.tech/logo.svg',
+        title: '开发者武器库',
+        desc: '开发者武器库，做开发者最专业最好用的专业工具箱',
+        link: 'https://devtool.tech',
+      },
+      {
+        icon: 'https://tool.lu/favicon.ico',
+        title: '在线工具',
+        desc: '开发人员的工具箱',
+        link: 'https://tool.lu',
+      },
+      {
+        icon: '/icons/json-cn.ico',
+        title: 'Json 中文网',
+        desc: 'JSON 在线解析及格式化验证',
+        link: 'https://www.json.cn',
+      },
+    ],
+  },
+  
 ]
