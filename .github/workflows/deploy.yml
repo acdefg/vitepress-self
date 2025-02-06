@@ -28,7 +28,7 @@ jobs:
         run: |
           pwd
           echo "======= Directory Structure ======="
-          ls -R ./
+          ls -R ./dist
           echo "======= RSS File Check ======="
           [ -f dist/feed.rss ] && echo "RSS exists" || echo "RSS missing"
 

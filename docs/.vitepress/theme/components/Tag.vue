@@ -25,11 +25,11 @@
     <!-- 内容 -->
     <div>
       <!-- 标签云 -->
-      <WordCloud :dataList="dataList" :style="{ width: '100%', height: '130px' }" />
-      <a-row :gutter="24">
+      <WordCloud :dataList="dataList" :style="{ width: '100%', height: '130px'}" />
+      <a-row :gutter="24" >
         <!-- 标签列表区域 -->
-        <a-col :span="24">
-          <a-card :style="{ width: '100%', marginBottom: '20px' }">
+        <a-col :span="24" :style="{ marginTop: '24px', marginBottom: '24px' }">
+          <a-card :style="{ width: '100%', padding: '12px', gap: '24px'}">
             <a-tag
               @click="toggleTag(tagTitle)"
               v-for="(tag, tagTitle) in tags"
@@ -335,10 +335,13 @@ function initWordCloud(tags) {
   background: var(--vp-c-bg);
 }
 :deep(.arco-card-bordered) {
-  border: 1px solid var(--vp-c-gutter);
+  border: 5px solid var(--vp-c-gutter);
 }
 :deep(.arco-card-body) {
   color: var(--vp-c-text-1);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 /** 列表样式 */
@@ -378,6 +381,7 @@ function initWordCloud(tags) {
   border: 1px solid var(--vp-c-divider);
   vertical-align: middle;
 }
+
 .main-container-tag .tag-header-wrapper .tag-breadcrumb-icon .icon-svg {
   position: absolute;
   left: 50%;
@@ -400,16 +404,16 @@ svg:not(:root) {
 .main-container-tag .tag-item {
   color: var(--vp-c-text-1);
   border-radius: 50px;
-  line-height: 24px;
+  line-height: 55px;   /** 24px */
   padding: 12px 12px;
-  margin: 8px 8px 0 0;
+  margin: 8px 12px 0 0;  /* 8px 8px 0 0; */
   cursor: pointer;
   border: 1px solid var(--vp-c-gutter);
 }
 .main-container-tag .tag-title {
   margin-right: 6px;
   word-break: normal;
-  white-space: pre-wrap;
+  white-space: nowrap;   /* pre_wrap  */
 }
 .main-container-tag .tag-checkable-checked {
   border-color: #3384f5;
@@ -451,6 +455,7 @@ svg:not(:root) {
   font-weight: 400;
   line-height: 22px;
 }
+
 .result-item-description {
   word-wrap: break-word;
   line-height: 22px;
@@ -468,8 +473,16 @@ svg:not(:root) {
   color: var(--vp-c-brand-1);
   text-decoration: underline;
 }
+
+/* 自主调整  */
+.vp-doc h3 {
+  margin: 15px;
+}
+/* --------- */
+
 .meta-content a {
   font-size: 14px;
   color: var(--vp-c-text-2);
 }
+
 </style>
