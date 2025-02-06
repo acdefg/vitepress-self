@@ -38,10 +38,11 @@ jobs:
       - name: Build
         env:
           APP_BASE_PATH: /
-        run: pnpm install --no-frozen-lockfile && pnpm run build
+        run: npm install && npm run build
 
       - name: Inspect Build Output
         run: |
+          pwd
           echo "======= Directory Structure ======="
           ls -R dist
           echo "======= RSS File Check ======="
