@@ -76,21 +76,25 @@ export const NAV_DATA: NavData[] = [
       {
         icon: 'https://cloud.siliconflow.cn/favicon.ico',
         title: 'Siliconflow(收费DEEP SEEK)',
+        desc: '多种大模型部署，可提供外接api',
         link: 'https://cloud.siliconflow.cn/playground/chat',
       },
       {
         icon: 'https://lambdalabs.com/hubfs/1.%20Branding%20(Lambda)/Lambda%20Logos/lambda_favicon.png',
         title: 'Lambdalabs(免费DEEP SEEK)',
+        desc: '界面简单粗暴，需要翻墙',
         link: 'https://lambda.chat/',
       },
       {
         icon: 'https://www.midjourney.com/apple-touch-icon.png',
         title: 'Midjourney（绘画）',
+        desc: '待学习。。。',
         link: 'https://www.midjourney.com',
       },
       {
         icon: 'https://global-uploads.webflow.com/59deb588800ae30001ec19c9/5d4891e0e260e3c1bc37b100_beautiful%20ai%20favicon%20%20blue%20square.png',
         title: 'Beautiful.ai（PPT）',
+        desc: '待学习。。。',
         link: 'https://www.beautiful.ai',
       },
     ],
