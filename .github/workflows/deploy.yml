@@ -4,10 +4,6 @@ on:
   workflow_dispatch: # 手动触发开关（已启用）
   push:
     branches: [ main ]
-    paths: 
-      - 'docs/**'
-      - 'package.json'
-      - '.github/deploy.yml'
 
 permissions:
   contents: write
@@ -58,8 +54,8 @@ jobs:
             sudo mkdir -p /home/vitepress/dist
 
       # 优化后的部署步骤
-      - name: Deploy via SSH
-        uses: burnett01/rsync-deployments@5.2.2 # 更可靠的文件同步方案
+      - name: Rsync Deployments Action
+        uses: Burnett01/rsync-deployments@7.0.2 # 更可靠的文件同步方案
         with:
           switches: -avz --delete # 自动删除冗余文件
           path: ./dist/
