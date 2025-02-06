@@ -57,13 +57,13 @@ jobs:
       - name: Rsync Deployments Action
         uses: Burnett01/rsync-deployments@7.0.2 # 更可靠的文件同步方案
         with:
-          switches: -avz --delete # 自动删除冗余文件
+          switches: -avzr --delete --exclude="" --include="" --filter=""
           path: ./dist/
-          remote-path: /home/vitepress/dist/
-          remote-host: ${{ secrets.REMOTE_HOST }}
-          remote-user: ${{ secrets.REMOTE_USERNAME }}
-          remote-key: ${{ secrets.PASSWORD }}
-          remote-port: 22
+          remote_path: /home/vitepress/dist/
+          remote_host: ${{ secrets.REMOTE_HOST }}
+          remote_port: 22
+          remote_user: ${{ secrets.REMOTE_USERNAME }}
+          remote_key:  ${{ secrets.PASSWORD }}
 
       - name: Reload Nginx
         uses: appleboy/ssh-action@master
