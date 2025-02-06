@@ -57,16 +57,19 @@ jobs:
           APP_BASE_PATH: /${{ github.repository }}
         run: pnpm install --no-frozen-lockfile&& pnpm run build
 
+        #将文件上传至云服务器  
       - name: ssh-scp-deploy
         uses: marcodallasanta/ssh-scp-deploy@v1.2.0
         with:
+          #本地打包后的文件目录
           local: ./dist/*
+          #上传至远程服务器的目标目录
           remote: /home/vitepress/dist
+          #远程服务器的地址
           host: ${{ secrets.REMOTE_HOST }}
+          #远程服务器的用户名
           user: ${{ secrets.REMOTE_USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          pre_upload: |  # 新增预清理步骤
-            rm -rf /home/vitepress/dist/* || true
-            mkdir -p /home/vitepress/dist
+          #远程服务器的密钥（与密码二者选其一）
+          password: ${{secrets.PASSWORD }}
+          #上传后执行的脚本
           post_upload: sudo nginx -s reload
-      

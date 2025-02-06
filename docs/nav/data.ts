@@ -27,12 +27,6 @@ export const NAV_DATA: NavData[] = [
         desc: '为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件',
         link: 'https://qwerty.fe-mm.com',
       },
-      {
-        icon: '/logo.png',
-        title: 'mmPlayer',
-        desc: 'mmPlayer 在线音乐播放器',
-        link: 'https://netease-music.fe-mm.com',
-      },
     ],
   },
   {
@@ -76,13 +70,18 @@ export const NAV_DATA: NavData[] = [
     items: [
       {
         icon: '/icons/chatgpt.png',
-        title: 'ChatGPT（最强）',
+        title: 'ChatGPT（经典）',
         link: 'https://chat.openai.com/chat',
       },
       {
-        icon: 'https://www.notion.so/images/logo-ios.png',
-        title: 'Notion AI（笔记）',
-        link: 'https://www.notion.so',
+        icon: 'https://cloud.siliconflow.cn/favicon.ico',
+        title: 'Siliconflow(收费DEEP SEEK)',
+        link: 'https://cloud.siliconflow.cn/playground/chat',
+      },
+      {
+        icon: 'https://lambdalabs.com/hubfs/1.%20Branding%20(Lambda)/Lambda%20Logos/lambda_favicon.png',
+        title: 'Lambdalabs(免费DEEP SEEK)',
+        link: 'https://lambda.chat/',
       },
       {
         icon: 'https://www.midjourney.com/apple-touch-icon.png',
