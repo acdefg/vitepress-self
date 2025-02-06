@@ -52,27 +52,29 @@ jobs:
             sudo rm -rf /home/vitepress/dist/*
             # 保险措施：如果目录被误删则重建
             sudo mkdir -p /home/vitepress/dist
-            
+
       - name: Debug SSH Connection
         run: |
           echo "${{ secrets.PASSWORD }}" > private.key
           chmod 600 private.key
           ssh -vvv -i private.key -p 22 ${{ secrets.REMOTE_USERNAME }}@${{ secrets.REMOTE_HOST }} "echo Connected!"
 
-
-      # 优化后的部署步骤
-      - name: Rsync Deployments Action
-        uses: Burnett01/rsync-deployments@7.0.2 # 更可靠的文件同步方案
+        #将文件上传至云服务器  
+      - name: ssh-scp-deploy
+        uses: marcodallasanta/ssh-scp-deploy@v1.2.0
         with:
-          legacy_allow_rsa_hostkeys: true
-          switches: -avzr --delete --exclude="" --include="" --filter=""
-          path: ./dist/
-          remote_path: /home/vitepress/dist/
-          remote_host: ${{ secrets.REMOTE_HOST }}
-          remote_port: 22
-          remote_user: ${{ secrets.REMOTE_USERNAME }}
-          remote_key:  ${{ secrets.PASSWORD }}
-
+          #本地打包后的文件目录
+          local: ./dist/*
+          #上传至远程服务器的目标目录
+          remote: /home/vitepress/dist
+          #远程服务器的地址
+          host: ${{ secrets.REMOTE_HOST }}
+          #远程服务器的用户名
+          user: ${{ secrets.REMOTE_USERNAME }}
+          #远程服务器的密钥（与密码二者选其一）
+          password: ${{secrets.PASSWORD }}
+          #上传后执行的脚本
+          post_upload: sudo nginx -s reload
       
       - name: Reload Nginx
         uses: appleboy/ssh-action@master
