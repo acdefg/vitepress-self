@@ -448,8 +448,10 @@ svg:not(:root) {
 
 /* 新增标签hover效果 */
 .main-container-tag .tag-item:hover {
-  box-shadow: 0 2px 8px rgba(51,132,245,0.2);
-  transform: scale(1.02);
+  box-shadow: 0 5px 10px rgba(15, 51, 100, 0.2);
+  transform: scale(1.3);
+  border: 1.5px solid var(--vp-c-gray-1);
+  transition: transform 0.3s ease;
 }
 
 .main-container-tag .tag-title {
@@ -457,6 +459,14 @@ svg:not(:root) {
   word-break: normal;
   white-space: nowrap;   /* pre_wrap  */
 }
+
+/*
+.main-container-tag .tag-title:hover {
+  color: var(--vp-c-brand-1);
+  transform:scaleX(1.1);
+}
+*/
+
 .main-container-tag .tag-checkable-checked {
   border-color: #3384f5;
   color: #1672f3;
@@ -541,7 +551,7 @@ svg:not(:root) {
 
 /* 自主调整  */
 .vp-doc h3 {
-  background: var(--vp-c-gray-3);   /* --vp-c-bg-sof */
+  background: var(--vp-c-gray-3);   /* --vp-c-bg-soft */
   border-radius: 33px;
   margin: 8px 0;
   transition: all 0.3s ease;
