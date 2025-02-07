@@ -330,6 +330,17 @@ function initWordCloud(tags) {
 
 <style scoped>
 /** ---------------Arco样式--------------- */
+:root {
+  --vp-c-bg-soft: #f8f9fa;
+  --vp-c-bg-mute: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --vp-c-bg-soft: #2a2a2a;
+    --vp-c-bg-mute: #1a1a1a;
+  }
+}
+
 /** 卡片样式 */
 :deep(.arco-card) {
   background: var(--vp-c-bg);
@@ -355,16 +366,39 @@ function initWordCloud(tags) {
   color: var(--vp-c-text-1);
   border-bottom: 1px solid var(--vp-c-gutter);
 }
-:deep(.arco-list-split .arco-list-item:not(:last-child)) {
+:deep(.arco-list-split .arco-list-item) {
   border-bottom: 1px solid var(--vp-c-gutter);
 }
 
-/** 标签样式 */
-:deep(.arco-tag) {
-  background-color: var(--vp-c-bg);
+/*
+:deep(.arco-list-split .arco-list-item:not(:last-child)) {
+  border-bottom: 1px solid var(--vp-c-gutter);
+}
+*/
+
+/** ---------------新增列表项样式--------------- */
+
+/** 新增列表项样式 --------------- */
+
+/* 正确的列表项选择器 */
+:deep(.arco-list-content .arco-list-item) {
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  margin: 12px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  padding: 20px 30px;  /* 左右边距增加 */
+  margin-left: 20px;    /* 左侧缩进 */
+}
+
+:deep(.arco-list-content .arco-list-item:hover) {
+  background: var(--vp-c-bg-mute);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 }
 
 /** ---------------自定义样式--------------- */
+
 /** 头部样式 */
 .main-container-tag .tag-header-wrapper {
   padding: 24px 0;
@@ -400,16 +434,24 @@ svg:not(:root) {
   margin-left: 16px;
 }
 
-/** 标签样式 */
+/** 标签样式--修改 */
 .main-container-tag .tag-item {
   color: var(--vp-c-text-1);
   border-radius: 50px;
-  line-height: 55px;   /** 24px */
-  padding: 12px 12px;
-  margin: 8px 12px 0 0;  /* 8px 8px 0 0; */
+  line-height: 55px;
+  padding: 12px 16px; /* 增加水平padding */
+  margin: 8px 12px 8px 0; /* 调整上下边距 */
   cursor: pointer;
   border: 1px solid var(--vp-c-gutter);
+  transition: all 0.2s ease; /* 添加过渡 */
 }
+
+/* 新增标签hover效果 */
+.main-container-tag .tag-item:hover {
+  box-shadow: 0 2px 8px rgba(51,132,245,0.2);
+  transform: scale(1.02);
+}
+
 .main-container-tag .tag-title {
   margin-right: 6px;
   word-break: normal;
@@ -453,7 +495,7 @@ svg:not(:root) {
   margin: 3;
   font-size: 16px;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 40px;
 }
 
 .result-item-description {
@@ -463,26 +505,77 @@ svg:not(:root) {
   margin: 8px 0;
 }
 
+/* 增加---动态下划线 */
+.result-item {
+  position: relative;
+  padding-bottom: -1px;
+}
+.result-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 20%;
+  width: 60%;
+  height: 1px;
+  background: var(--vp-c-gutter);  /*  --vp-c-gray-soft */
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+:deep(.arco-list-item:hover) .result-item::after {
+  transform: scaleX(1);
+}
+
 .vp-doc a {
   font-weight: 400;
   font-size: 14px;
-  color: var(--vp-c-text-1);
+  color: var(--vp-c-text-1);   /* --vp-c-text-1  --vp-c-brand-darker*/
   text-decoration: none;
+  padding: 10px 6px;  /* 左右边距增加 */
+  margin-left: 12px;    /* 左侧缩进 */
 }
 .vp-doc a:hover {
-  color: var(--vp-c-brand-1);
-  text-decoration: underline;
+  color: var(--vp-c-bg-soft);  /*--vp-c-brand-1*/
+  /* text-decoration: underline; */
 }
 
 /* 自主调整  */
 .vp-doc h3 {
-  margin: 15px;
+  background: var(--vp-c-gray-3);   /* --vp-c-bg-sof */
+  border-radius: 33px;
+  margin: 8px 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.vp-doc h3:hover {
+  background: var(--vp-c-brand-darker);   /* --vp-c-bg-sof */
+  transform: scale(1.02);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 /* --------- */
 
+
+/** ---------------修改meta样式--------------- */
+.meta-content {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
 .meta-content a {
   font-size: 14px;
   color: var(--vp-c-text-2);
+  transition: color 0.2s ease; /* 新增过渡 */
 }
+:deep(.arco-list-item:hover) .meta-content {
+  opacity: 1;
+}
+.meta-content a:hover {
+  color: var(--vp-c-brand) !important;
+}
+
+/** ---------------新增自定义样式--------------- */
+
+/** ------------------------------------------------- */
 
 </style>
