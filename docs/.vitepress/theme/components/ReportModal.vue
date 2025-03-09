@@ -981,7 +981,6 @@ canvas {
   width: 80px;
   text-align: center;
 }
-
 .form-control-sm {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
