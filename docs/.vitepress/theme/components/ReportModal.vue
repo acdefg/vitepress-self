@@ -193,6 +193,28 @@ export default {
       breakMinutes: 0
     })
 
+    const calculateTotalStats = (statsData) => {
+      if (!statsData || typeof statsData !== 'object') {
+        return {
+          pomodoro: 0,
+          shortBreak: 0,
+          longBreak: 0,
+          totalMinutes: 0,
+          focusMinutes: 0,
+          breakMinutes: 0
+        }
+      }
+
+      return Object.values(statsData).reduce((total, day) => ({
+        pomodoro: total.pomodoro + (day?.pomodoro || 0),
+        shortBreak: total.shortBreak + (day?.shortBreak || 0),
+        longBreak: total.longBreak + (day?.longBreak || 0),
+        totalMinutes: total.totalMinutes + (day?.totalMinutes || 0),
+        focusMinutes: total.focusMinutes + ((day?.pomodoro || 0) * 25),
+        breakMinutes: total.breakMinutes + ((day?.shortBreak || 0) * 5) + ((day?.longBreak || 0) * 15)
+      }), { pomodoro: 0, shortBreak: 0, longBreak: 0, totalMinutes: 0, focusMinutes: 0, breakMinutes: 0 })
+    }
+
     const processStatsForDisplay = (stats) => {
       return Object.entries(stats).map(([date, data]) => ({
         date,
@@ -229,15 +251,28 @@ export default {
     let pieChart = null
 
     // Date range with proper initialization
-    const today = new Date()
-    today.setHours(0, 0, 0, 0)
-    const thirtyDaysAgo = new Date()
-    thirtyDaysAgo.setDate(today.getDate() - 29)
-    thirtyDaysAgo.setHours(0, 0, 0, 0)
+    const startDate = ref('');
+    const endDate = ref('');
 
-    // 使用本地时间格式
-    const endDate = ref(today.toLocaleDateString('sv').split(' ')[0])  // sv locale gives YYYY-MM-DD format
-    const startDate = ref(thirtyDaysAgo.toLocaleDateString('sv').split(' ')[0])
+    const initializeDateRange = () => {
+      const today = new Date();
+      const oneMonthAgo = new Date();
+      oneMonthAgo.setMonth(oneMonthAgo.getMonth() - 1);
+
+      // 格式化日期为 YYYY-MM-DD
+      endDate.value = today.toISOString().split('T')[0];
+      startDate.value = oneMonthAgo.toISOString().split('T')[0];
+
+      // 保存到 localStorage
+      if (typeof window !== 'undefined') {
+        try {
+          localStorage.setItem('reportStartDate', startDate.value);
+          localStorage.setItem('reportEndDate', endDate.value);
+        } catch (e) {
+          console.error('Error saving initial date range:', e);
+        }
+      }
+    };
 
     const formatDate = (dateStr) => {
       const date = new Date(dateStr)
@@ -396,28 +431,25 @@ export default {
       })
     }
 
-
-    const calculateTotalStats = (statsData) => {
-      if (!statsData || typeof statsData !== 'object') {
-        return {
-          pomodoro: 0,
-          shortBreak: 0,
-          longBreak: 0,
-          totalMinutes: 0,
-          focusMinutes: 0,
-          breakMinutes: 0
+    const processStats = (newData) => {
+      try {
+        if (newData && Object.keys(newData).length > 0) {
+          stats.value = JSON.parse(JSON.stringify(newData));
+          totalStats.value = calculateTotalStats(newData);
+          nextTick(() => {
+            updateCharts();
+          });
         }
+      } catch (error) {
+        console.error('Error processing stats:', error);
       }
+    };
 
-      return Object.values(statsData).reduce((total, day) => ({
-        pomodoro: total.pomodoro + (day?.pomodoro || 0),
-        shortBreak: total.shortBreak + (day?.shortBreak || 0),
-        longBreak: total.longBreak + (day?.longBreak || 0),
-        totalMinutes: total.totalMinutes + (day?.totalMinutes || 0),
-        focusMinutes: total.focusMinutes + ((day?.pomodoro || 0) * 25),
-        breakMinutes: total.breakMinutes + ((day?.shortBreak || 0) * 5) + ((day?.longBreak || 0) * 15)
-      }), { pomodoro: 0, shortBreak: 0, longBreak: 0, totalMinutes: 0, focusMinutes: 0, breakMinutes: 0 })
-    }
+    // Watch statsData prop changes
+    watch(() => props.statsData, (newData) => {
+      console.log('Stats data updated:', newData);
+      processStats(newData);
+    }, { immediate: true, deep: true });
 
     // Watch for show prop changes to update charts
     watch(() => props.show, (newVal) => {
@@ -485,15 +517,15 @@ export default {
     onMounted(() => {
       if (typeof window === 'undefined') return;
 
-      // 尝试从localStorage加载保存的日期范围
+      // 尝试从localStorage加载保存的日期范围，如果没有则初始化
       const savedStartDate = safeStorage.getItem('reportStartDate');
       const savedEndDate = safeStorage.getItem('reportEndDate');
 
-      if (savedStartDate) {
+      if (savedStartDate && savedEndDate) {
         startDate.value = savedStartDate;
-      }
-      if (savedEndDate) {
         endDate.value = savedEndDate;
+      } else {
+        initializeDateRange();
       }
 
       console.log('Component mounted with date range:', {
