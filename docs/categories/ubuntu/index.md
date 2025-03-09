@@ -2,7 +2,7 @@
 showArticleMetadata: false
 editLink: false
 lastUpdated: false
-showComment: false
+comment: false
 ---
 
 # Ubuntu 装修

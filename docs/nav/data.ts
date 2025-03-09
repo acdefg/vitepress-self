@@ -17,6 +17,16 @@ export const NAV_DATA: NavData[] = [
     ],
   },
   {
+    title: '小应用开发',
+    items: [
+      {
+        icon: '/logo.png',
+        title: 'pomodoro',
+        link: '../pomodoro',
+      },
+    ],
+  },
+  {
     title: 'AI 导航',
     items: [
       {

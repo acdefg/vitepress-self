@@ -2,7 +2,7 @@
 showArticleMetadata: false
 editLink: false
 lastUpdated: false
-showComment: false
+comment: false
 ---
 
 # "杂碎"逆袭史

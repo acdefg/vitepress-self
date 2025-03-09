@@ -35,6 +35,10 @@ export default {
     app.component('MNavLinks', MNavLinks)
     app.component('Tag', Tag)
     app.component('WordCloud', WordCloud)
+    app.component('AdminPanel', () => import('./components/AdminPanel.vue'))
+    app.component('AppMain', () => import('./components/AppMain.vue'))
+    app.component('Timer', () => import('./components/Timer.vue'))
+
 
     if (typeof window !== 'undefined') {
       watch(

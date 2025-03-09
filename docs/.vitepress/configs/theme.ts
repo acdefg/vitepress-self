@@ -119,12 +119,13 @@ export const themeConfig: DefaultTheme.Config = {
     repoId: 'R_kgDONFp41w',
     category: 'Announcements',
     categoryId: 'DIC_kwDONFp4184CjrYQ',
-  }
-/*   // 自定义扩展: 评论配置
+    loading: 'eager',
+  },
+// 自定义扩展: 评论配置
   commentConfig: {
-    type: 'gitalk',
-    showComment: true // 是否显示评论
-  }, */
+    type: 'giscus',
+    showComment: false // 是否显示评论
+  }, 
 /*   // 自定义扩展: 页脚配置
   footerConfig: {
     showFooter: true, // 是否显示页脚

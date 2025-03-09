@@ -26,6 +26,8 @@ declare module 'vitepress' {
         category: string
         /** giscus 分类 ID */
         categoryId: string
+
+        loading: 'lazy'
       }
     }
   }
