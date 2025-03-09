@@ -36,7 +36,8 @@
       @update-date-range="handleDateRangeUpdate" @save-stats="handleStatsUpdate" />
     <SettingsModal v-if="showSettingsModal" :show="showSettingsModal" @close="showSettingsModal = false"
       @settings-updated="handleSettingsUpdate" />
-    <RoomModal v-if="showRoomModal" :show="showRoomModal" :current-user="currentUser" @close="showRoomModal = false" />
+    <RoomModal v-if="showRoomModal" :show="showRoomModal" :current-user="currentUser" @close="showRoomModal = false"
+      @showLogin="handleShowLogin" />
     <WishWallModal v-if="showWishWallModal" :show="showWishWallModal" :current-user="currentUser"
       @close="showWishWallModal = false" />
   </div>
@@ -270,6 +271,11 @@ export default {
       currentUser.value = null
     }
 
+    const handleShowLogin = () => {
+      showRoomModal.value = false;
+      showLoginModal.value = true;
+    };
+
     return {
       showLoginModal,
       showReportModal,
@@ -294,7 +300,8 @@ export default {
       handleStatsUpdate,
       logout,
       currentStats,
-      handleDateRangeUpdate // Add this to returns
+      handleDateRangeUpdate, // Add this to returns
+      handleShowLogin
     }
   }
 }

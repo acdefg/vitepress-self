@@ -15,7 +15,7 @@
             <div class="prompt-card">
               <i class="fas fa-door-open fa-3x text-primary mb-3"></i>
               <h4 class="mb-3">加入学习社区</h4>
-              <button class="btn btn-lg btn-primary" @click="$emit('showLogin')">
+              <button class="btn btn-lg btn-primary" @click="handleLoginClick">
                 <i class="fas fa-sign-in-alt me-2"></i>立即登录
               </button>
             </div>
@@ -26,14 +26,19 @@
             <!-- 控制区域 -->
             <div class="control-panel">
               <div class="room-status">
-                <template v-if="currentUser.room">
+                <template v-if="userCurrentRoom">
                   <div class="current-room">
                     <i class="fas fa-school me-2"></i>
-                    当前自习室：{{ currentUser.room }}
+                    当前自习室：{{ userCurrentRoom }}
                   </div>
-                  <button class="btn btn-danger" @click="leaveRoom">
-                    <i class="fas fa-sign-out-alt me-2"></i>退出
-                  </button>
+                  <div class="btn-group">
+                    <button class="btn btn-success btn-create" @click="createRoom">
+                      <i class="fas fa-plus-circle me-2"></i>新建自习室
+                    </button>
+                    <button class="btn btn-danger" @click="leaveRoom">
+                      <i class="fas fa-sign-out-alt me-2"></i>退出
+                    </button>
+                  </div>
                 </template>
                 <template v-else>
                   <div class="btn-group">
@@ -241,6 +246,12 @@ export default {
         return;
       }
 
+      // 如果用户已在其他自习室，先退出
+      if (props.currentUser.room) {
+        const prevRoom = props.currentUser.room;
+        delete roomStats.value[prevRoom].members[props.currentUser.username];
+      }
+
       roomStats.value[roomName] = {
         owner: props.currentUser.username, // 添加创建者信息
         members: {
@@ -249,8 +260,9 @@ export default {
       };
       localStorage.setItem('roomStats', JSON.stringify(roomStats.value));
 
-      props.currentUser.room = roomName;
-      localStorage.setItem('currentUser', JSON.stringify(props.currentUser));
+      const updatedUser = { ...props.currentUser, room: roomName };
+      localStorage.setItem('currentUser', JSON.stringify(updatedUser));
+      emit('update:currentUser', updatedUser);
 
       loadRoomStats();
       alert('成功创建并加入自习室！');
@@ -258,9 +270,9 @@ export default {
 
     const leaveRoom = async () => {
       const roomName = props.currentUser.room;
-      const roomMembers = Object.keys(roomStats.value[roomName].members);
+      const roomMembers = Object.keys(roomStats.value[roomName]?.members || {});
 
-      if (roomMembers.length === 1) {
+      if (!roomMembers.length || roomMembers.length === 1) {
         const confirm = window.confirm('你是自习室最后一名成员，退出后自习室将被删除。是否确认退出？');
         if (!confirm) return;
 
@@ -283,6 +295,7 @@ export default {
       localStorage.setItem('currentUser', JSON.stringify(updatedUser));
       emit('update:currentUser', updatedUser);
 
+      // 强制重新加载房间状态
       loadRoomStats();
       alert('已退出自习室！');
     };
@@ -387,6 +400,15 @@ export default {
       loadRoomStats();
     };
 
+    // 添加登录点击处理
+    const handleLoginClick = () => {
+      emit('showLogin');
+      // 移除 emit('close') 因为现在在父组件中处理
+    };
+
+    // 修改房间状态计算属性
+    const userCurrentRoom = computed(() => props.currentUser?.room || null);
+
     return {
       roomStats,
       sortedRoomMembers,
@@ -405,6 +427,8 @@ export default {
       availableMembers,
       openTransferModal,
       handleTransferOwner,
+      handleLoginClick,
+      userCurrentRoom,
     };
   }
 };

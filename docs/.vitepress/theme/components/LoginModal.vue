@@ -7,19 +7,6 @@
           <button type="button" class="btn-close" @click="$emit('close')"></button>
         </div>
         <div class="modal-body">
-          <ul class="nav nav-pills mb-3 justify-content-center">
-            <li class="nav-item">
-              <button class="nav-link" :class="{ active: activeTab === 'login' }" @click="activeTab = 'login'">
-                登录
-              </button>
-            </li>
-            <li class="nav-item">
-              <button class="nav-link" :class="{ active: activeTab === 'register' }" @click="activeTab = 'register'">
-                注册
-              </button>
-            </li>
-          </ul>
-
           <form v-if="activeTab === 'login'" @submit.prevent="handleLogin">
             <div class="mb-3">
               <label class="form-label">邮箱</label>
@@ -30,7 +17,6 @@
               <input v-model="loginForm.password" type="password" class="form-control" required>
             </div>
             <div v-if="loginError" class="alert alert-danger">{{ loginError }}</div>
-            <button type="submit" class="btn btn-primary w-100">登录</button>
           </form>
 
           <form v-else @submit.prevent="handleRegister">
@@ -47,8 +33,16 @@
               <input v-model="registerForm.password" type="password" class="form-control" required>
             </div>
             <div v-if="registerError" class="alert alert-danger">{{ registerError }}</div>
-            <button type="submit" class="btn btn-primary w-100">注册</button>
           </form>
+
+          <div class="btn-group w-100">
+            <button class="btn btn-primary" @click="handleButtonClick">
+              {{ activeTab === 'login' ? '登录' : '注册' }}
+            </button>
+            <button class="btn btn-secondary" @click="toggleTab">
+              切换到{{ activeTab === 'login' ? '注册' : '登录' }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -167,6 +161,18 @@ export default {
       const exists = users.some(u => u.email === email)
       console.log('Checking email exists:', email, exists)
       return exists
+    },
+
+    handleButtonClick() {
+      if (this.activeTab === 'login') {
+        this.handleLogin()
+      } else {
+        this.handleRegister()
+      }
+    },
+
+    toggleTab() {
+      this.activeTab = this.activeTab === 'login' ? 'register' : 'login'
     }
   }
 }
@@ -264,9 +270,20 @@ export default {
   border-color: #ba4949;
 }
 
+.btn-secondary {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
 .btn-primary:hover {
   background-color: #a13e3e;
   border-color: #973a3a;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
 }
 
 .alert {
@@ -280,5 +297,23 @@ export default {
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+.toggle-link {
+  color: #6c757d;
+  text-decoration: none;
+}
+
+.toggle-link:hover {
+  color: #ba4949;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-group .btn {
+  flex: 1;
 }
 </style>
