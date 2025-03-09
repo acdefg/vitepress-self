@@ -4,15 +4,205 @@
         <title>CC's blog</title>
         <link>https://ljc0606.cn</link>
         <description>undefined</description>
-        <lastBuildDate>Sun, 09 Mar 2025 09:19:08 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 09 Mar 2025 11:10:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <copyright>Copyright (c) 2024-present, cici</copyright>
         <item>
+            <title><![CDATA[关于我]]></title>
+            <link>https://ljc0606.cn/about</link>
+            <guid>https://ljc0606.cn/about</guid>
+            <pubDate>Sun, 09 Mar 2025 10:33:18 GMT</pubDate>
+            <description><![CDATA[
+<img width=100% src="/public/img/svg/about-me-header.svg" alt="头部图" />
+<p align="center">
+  <a href="https://blog.charles7c.top/" target="_blank" style="display: inline-block;">
+    <img alt="个人主页" src="https://img.shields.io/badge/知识库-查尔斯-lightblue?logo=blogger&logoColor=lightblue" />
+  </a>&nbsp;
+    <a href="https://github.com/Charles7c" target="_blank" style="display: inline-block;">
+        <img alt="GitHub个人主页" src="https://img.shields.io/badge/GitHub-Charles7c-lightblue?logo=github" />
+    </a>&nbsp;
+    <a href="https://gitee.com/Charles7c" target="_blank" style="display: inline-block;">
+        <img alt="码云个人主页" src="https://img.shields.io/badge/码云-Charles7c-C71D23?logo=gitee&logoColor=C71D23" />
+    </a>&nbsp;
+    <a href="https://blog.csdn.net/Charles_7c" target="_blank" style="display: inline-block;">
+        <img alt="CSDN个人主页" src="https://img.shields.io/badge/CSDN-查尔斯-FC5531?logo=C&logoColor=FC5531" />
+    </a>&nbsp;
+    <a href="https://juejin.cn/user/685744115170142" target="_blank" style="display: inline-block;">
+        <img alt="掘金个人主页" src="https://img.shields.io/badge/掘金-查尔斯-1E80FF" />
+    </a>&nbsp;
+    <a href="https://www.yuque.com/charles7c" target="_blank" style="display: inline-block;">
+        <img alt="语雀个人主页" src="https://img.shields.io/badge/语雀-查尔斯-38D27D" />
+    </a>&nbsp;
+</p>
+
+]]></description>
+            <content:encoded><![CDATA[<img width=100% src="/public/img/svg/about-me-header.svg" alt="头部图" />
+<p align="center">
+  <a href="https://blog.charles7c.top/" target="_blank" style="display: inline-block;">
+    <img alt="个人主页" src="https://img.shields.io/badge/知识库-查尔斯-lightblue?logo=blogger&logoColor=lightblue" />
+  </a>&nbsp;
+    <a href="https://github.com/Charles7c" target="_blank" style="display: inline-block;">
+        <img alt="GitHub个人主页" src="https://img.shields.io/badge/GitHub-Charles7c-lightblue?logo=github" />
+    </a>&nbsp;
+    <a href="https://gitee.com/Charles7c" target="_blank" style="display: inline-block;">
+        <img alt="码云个人主页" src="https://img.shields.io/badge/码云-Charles7c-C71D23?logo=gitee&logoColor=C71D23" />
+    </a>&nbsp;
+    <a href="https://blog.csdn.net/Charles_7c" target="_blank" style="display: inline-block;">
+        <img alt="CSDN个人主页" src="https://img.shields.io/badge/CSDN-查尔斯-FC5531?logo=C&logoColor=FC5531" />
+    </a>&nbsp;
+    <a href="https://juejin.cn/user/685744115170142" target="_blank" style="display: inline-block;">
+        <img alt="掘金个人主页" src="https://img.shields.io/badge/掘金-查尔斯-1E80FF" />
+    </a>&nbsp;
+    <a href="https://www.yuque.com/charles7c" target="_blank" style="display: inline-block;">
+        <img alt="语雀个人主页" src="https://img.shields.io/badge/语雀-查尔斯-38D27D" />
+    </a>&nbsp;
+</p>
+<hr>
+<ul>
+<li>👋 Hi, I'm Charles7c</li>
+<li>🔭 I'm currently working on backend development</li>
+<li>📫 How to reach me: <a href="mailto:charles7c@126.com" target="_blank" rel="noreferrer">charles7c@126.com</a></li>
+<li>📖 My motto: “东隅已逝，桑榆非晚。”</li>
+</ul>
+<hr>
+<h3 id="后端技术栈" tabindex="-1">后端技术栈 <a class="header-anchor" href="#后端技术栈" aria-label="Permalink to &quot;后端技术栈&quot;"></a></h3>
+<p>
+  <img src="https://img.shields.io/badge/-Spring-6DB33F?logo=Spring&logoColor=FFF" alt="Spring" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?logo=Spring-Boot&logoColor=FFF" alt="Spring Boot" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=FFF" alt="MySQL" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-MariaDB-A9A9A9?logo=MariaDB&logoColor=003545" alt="MariaDB" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-PostgreSQL-C0C0C0?logo=PostgreSQL&logoColor=4169E1" alt="PostgreSQL" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Oracle-C0C0C0?logo=Oracle&logoColor=F80000" alt="Oracle" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Microsoft%20SQL%20Server-D3D3D3?logo=Microsoft-SQL-Server&logoColor=CC2927" alt="Microsoft SQL Server" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Redis-DC382D?logo=Redis&logoColor=FFF" alt="Redis" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-MongoDB-47A248?logo=MongoDB&logoColor=FFF" alt="MongoDB" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-RabbitMQ-FF6600?logo=RabbitMQ&logoColor=FFF" alt="RabbitMQ" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Solr-D9411E?logo=Apache-Solr&logoColor=FFF" alt="Solr" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-ElasticSearch-005571?logo=ElasticSearch&logoColor=FFF" alt="ElasticSearch" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Logstash-A9A9A9?logo=Logstash&logoColor=005571" alt="Logstash" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Kibana-A9A9A9?logo=Kibana&logoColor=005571" alt="Kibana" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Kafka-C0C0C0?logo=Apache-Kafka&logoColor=231F20" alt="Kafka" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Consul-F24C53?logo=Consul&logoColor=FFF" alt="Consul" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Tomcat-F8DC75?logo=Apache-Tomcat&logoColor=000" alt="Tomcat" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-JUnit5-25A162?logo=JUnit5&logoColor=FFF" alt="JUnit5" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Liquibase-2962FF?logo=Liquibase&logoColor=FFF" alt="Liquibase" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Maven-C71A36?logo=Apache-Maven&logoColor=FFF" alt="Maven" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Gradle-D3D3D3?logo=Gradle&logoColor=02303A" alt="Gradle" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Spring%20Security-6DB33F?logo=Spring-Security&logoColor=FFF" alt="Spring Security" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Hibernate-59666C?logo=Hibernate&logoColor=FFF" alt="Hibernate" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-JSON-000?logo=JSON&logoColor=FFF" alt="JSON" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-JWT-000?logo=JSON-Web-Tokens&logoColor=FFF" alt="JWT" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Java-F78C40?logo=OpenJDK&logoColor=FFF" alt="Java" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Python-A9A9A9?logo=Python&logoColor=3776AB" alt="Python" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Android-C0C0C0?logo=Android&logoColor=3DDC84" alt="Android" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Go-DCDCDC?logo=Go&logoColor=00ADD8" alt="Go" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-GraphQL-FFF?logo=GraphQL&logoColor=E10098" alt="GraphQL" style="display: inline-block;" />&nbsp;
+</p>
+<h3 id="前端技术栈" tabindex="-1">前端技术栈 <a class="header-anchor" href="#前端技术栈" aria-label="Permalink to &quot;前端技术栈&quot;"></a></h3>
+<p>
+  <img src="https://img.shields.io/badge/-Vue3-C0C0C0?logo=Vue.js&logoColor=4FC08D" alt="Vue3" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-TypeScript-C0C0C0?logo=TypeScript&logoColor=3178C6" alt="TypeScript" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Ant%20Design-C0C0C0?logo=Ant-Design&logoColor=0170FE" alt="Ant Design" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Node.js-D3D3D3?logo=Node.js&logoColor=339933" alt="Node.js" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Vite-D3D3D3?logo=Vite&logoColor=646CFF" alt="Vite" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Webpack-D3D3D3?logo=Webpack&logoColor=8DD6F9" alt="Webpack" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-NPM-C0C0C0?logo=npm&logoColor=CB3837" alt="NPM" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Axios-C0C0C0?logo=Axios&logoColor=5A29E4" alt="Axios" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-ESLint-C0C0C0?logo=ESLint&logoColor=4B32C3" alt="ESLint" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-jQuery-0769AD?logo=jQuery&logoColor=FFF" alt="jQuery" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=FFF" alt="BootStrap" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-ECharts-C0C0C0?logo=Apache-ECharts&logoColor=AA344D" alt="ECharts" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-JavaScript-A9A9A9?logo=JavaScript&logoColor=F7DF1E" alt="JavaScript" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-HTML5-A9A9A9?logo=HTML5&logoColor=E34F26" alt="HTML5" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-CSS3-A9A9A9?logo=CSS3&logoColor=1572B6" alt="CSS3" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Tailwind%20CSS-FFF?logo=Tailwind-CSS&logoColor=06B6D4" alt="Tailwind CSS" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Less-D3D3D3?logo=Less&logoColor=1D365D" alt="Less" style="display: inline-block;" />&nbsp;
+</p>
+<h3 id="devops" tabindex="-1">DevOps <a class="header-anchor" href="#devops" aria-label="Permalink to &quot;DevOps&quot;"></a></h3>
+<p>
+  <img src="https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=FFF" alt="Git" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-GitHub-181717?logo=GitHub&logoColor=FFF" alt="GitHub" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Gitee-C71D23?logo=Gitee&logoColor=FFF" alt="Gitee" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-GitLab-FC6D26?logo=GitLab&logoColor=FFF" alt="gitlab" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=GitHub-Actions&logoColor=FFF" alt="GitHub Actions" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Jenkins-D24939?logo=Jenkins&logoColor=000" alt="Jenkins" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-SonarQube-A9A9A9?logo=SonarQube&logoColor=4E9BCD" alt="SonarQube" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Docker-2496ED?logo=Docker&logoColor=FFF" alt="Docker" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Harbor-FFF?logo=Harbor&logoColor=60B932" alt="Harbor" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Kubernetes-326CE5?logo=Kubernetes&logoColor=FFF" alt="Kubernetes" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-CentOS-262577?logo=CentOS&logoColor=FFF" alt="CentOS" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Ubuntu-E95420?logo=Ubuntu&logoColor=FFF" alt="Ubuntu" style="display: inline-block;" />&nbsp;
+</p>
+<h3 id="运维技术栈" tabindex="-1">运维技术栈 <a class="header-anchor" href="#运维技术栈" aria-label="Permalink to &quot;运维技术栈&quot;"></a></h3>
+<p>
+  <img src="https://img.shields.io/badge/-阿里云-FF6A00?logo=Alibaba-Cloud&logoColor=FFF" alt="阿里云" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Nginx-009639?logo=Nginx&logoColor=FFF" alt="Nginx" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-VMware-607078?logo=VMware&logoColor=FFF" alt="VMware" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Prometheus-C0C0C0?logo=Prometheus&logoColor=E6522C" alt="Prometheus" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Grafana-DCDCDC?logo=Grafana&logoColor=F46800" alt="Grafana" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Ansible-FFF?logo=Ansible&logoColor=EE0000" alt="Ansible" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Lua-FFF?&logo=Lua&logoColor=2C2D72" alt="Lua" style="display: inline-block;" />&nbsp;
+</p>
+<h3 id="测试技术栈" tabindex="-1">测试技术栈 <a class="header-anchor" href="#测试技术栈" aria-label="Permalink to &quot;测试技术栈&quot;"></a></h3>
+<p>
+  <img src="https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=FFF" alt="Postman" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-JMeter-D3D3D3?logo=Apache-JMeter&logoColor=D22128" alt="JMeter" style="display: inline-block;" />&nbsp;
+</p>
+<h3 id="开发工具" tabindex="-1">开发工具 <a class="header-anchor" href="#开发工具" aria-label="Permalink to &quot;开发工具&quot;"></a></h3>
+<p>
+  <img src="https://img.shields.io/badge/-Intellij%20IDEA-000?logo=Intellij-IDEA&logoColor=FFF" alt="Intellij IDEA" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Eclipse-2C2255?logo=Eclipse&logoColor=FFF" alt="Eclipse" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-WebStorm-000?logo=WebStorm&logoColor=FFF" alt="WebStorm" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-PyCharm-C0C0C0?logo=PyCharm&logoColor=000" alt="PyCharm" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Android%20Studio-C0C0C0?logo=Android-Studio&logoColor=3DDC84" alt="Android Studio" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-VSCode-C0C0C0?logo=Visual-Studio-Code&logoColor=007ACC" alt="VSCode" style="display: inline-block;" />&nbsp;
+</p>
+<h3 id="其他" tabindex="-1">其他 <a class="header-anchor" href="#其他" aria-label="Permalink to &quot;其他&quot;"></a></h3>
+<p>
+  <img src="https://img.shields.io/badge/-Markdown-000?logo=Markdown&logoColor=FFF" alt="Markdown" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-WordPress-21759B?logo=WordPress&logoColor=FFF" alt="WordPress" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-GitHub%20Pages-222?logo=GitHub-Pages&logoColor=FFF" alt="GitHub Pages" style="display: inline-block;" />&nbsp;
+  <img src="https://img.shields.io/badge/-Adobe%20Photoshop-A9A9A9?logo=Adobe-Photoshop&logoColor=31A8FF" alt="Adobe Photoshop" style="display: inline-block;" />&nbsp;
+</p>
+<img width=100% src="/public/img/svg/about-footer.svg" alt="尾部图"/>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA["杂碎"逆袭史]]></title>
+            <link>https://ljc0606.cn/categories/fragments/</link>
+            <guid>https://ljc0606.cn/categories/fragments/</guid>
+            <pubDate>Sun, 09 Mar 2025 10:33:18 GMT</pubDate>
+            <description><![CDATA["杂碎"逆袭史
+::: tip 笔者说
+碎片化知识的时代，纵然知晓不成体系的知识仅仅只能积累经验，却无法有效提升，但身在其中还是要如此，记录碎片知识，留作备忘。说不定后面还有机会 “把点连成线”。
+:]]></description>
+            <content:encoded><![CDATA[<h1 id="杂碎-逆袭史" tabindex="-1">&quot;杂碎&quot;逆袭史 <a class="header-anchor" href="#杂碎-逆袭史" aria-label="Permalink to &quot;&quot;杂碎&quot;逆袭史&quot;"></a></h1>
+<div class="tip custom-block"><p class="custom-block-title">笔者说</p>
+<p>碎片化知识的时代，纵然知晓不成体系的知识仅仅只能积累经验，却无法有效提升，但身在其中还是要如此，记录碎片知识，留作备忘。说不定后面还有机会 “把点连成线”。</p>
+</div>
+]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[Ubuntu 装修]]></title>
+            <link>https://ljc0606.cn/categories/ubuntu/</link>
+            <guid>https://ljc0606.cn/categories/ubuntu/</guid>
+            <pubDate>Sun, 09 Mar 2025 10:33:18 GMT</pubDate>
+            <description><![CDATA[Ubuntu 装修
+::: tip 
+踩过的坑，最后会铺成一条平坦的路
+:::]]></description>
+            <content:encoded><![CDATA[<h1 id="ubuntu-装修" tabindex="-1">Ubuntu 装修 <a class="header-anchor" href="#ubuntu-装修" aria-label="Permalink to &quot;Ubuntu 装修&quot;"></a></h1>
+<div class="tip custom-block"><p class="custom-block-title">TIP</p>
+<p>踩过的坑，最后会铺成一条平坦的路</p>
+</div>
+]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[番茄钟工作法]]></title>
             <link>https://ljc0606.cn/pomodoro</link>
             <guid>https://ljc0606.cn/pomodoro</guid>
-            <pubDate>Sat, 08 Mar 2025 00:46:51 GMT</pubDate>
+            <pubDate>Sun, 09 Mar 2025 10:33:18 GMT</pubDate>
             <description><![CDATA[&lt;script setup
 import AppMain from './.vitepress/theme/components/AppMain.vue'
 &lt;/script&gt;
@@ -23,12 +213,25 @@ import AppMain from './.vitepress/theme/components/AppMain.vue'
             <title><![CDATA[番茄钟工作法]]></title>
             <link>https://ljc0606.cn/pomodoro/</link>
             <guid>https://ljc0606.cn/pomodoro/</guid>
-            <pubDate>Sat, 08 Mar 2025 00:01:34 GMT</pubDate>
+            <pubDate>Sun, 09 Mar 2025 10:33:18 GMT</pubDate>
             <description><![CDATA[&lt;div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh;"
     &lt;iframe src=".]]></description>
             <content:encoded><![CDATA[<div style="position: fixed; top: 0; left: 0; width: 100%; height: 100vh;">
     <iframe src="./pomodoro/index.html" style="width: 100%; height: 100%; border: none;"></iframe>
 </div>]]></content:encoded>
+        </item>
+        <item>
+            <title><![CDATA[我的标签]]></title>
+            <link>https://ljc0606.cn/tags</link>
+            <guid>https://ljc0606.cn/tags</guid>
+            <pubDate>Sun, 09 Mar 2025 10:33:18 GMT</pubDate>
+            <description><![CDATA[&lt;ClientOnly
+	&lt;Tag /&gt;
+&lt;/ClientOnly&gt;]]></description>
+            <content:encoded><![CDATA[<ClientOnly>
+	<Tag />
+</ClientOnly>
+]]></content:encoded>
         </item>
         <item>
             <title><![CDATA[内容概况]]></title>
@@ -43,21 +246,6 @@ import { NAV_DATA1 } from './data'
 <DIGITALNav v-for="{title, items} in NAV_DATA1" :title="title" :items="items"/><br />
 <div class="tip custom-block"><p class="custom-block-title">TIP</p>
 <p>笔记搬运中...</p>
-</div>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[Ubuntu 装修]]></title>
-            <link>https://ljc0606.cn/categories/ubuntu/</link>
-            <guid>https://ljc0606.cn/categories/ubuntu/</guid>
-            <pubDate>Tue, 05 Nov 2024 01:24:28 GMT</pubDate>
-            <description><![CDATA[Ubuntu 装修
-::: tip 
-踩过的坑，最后会铺成一条平坦的路
-:::]]></description>
-            <content:encoded><![CDATA[<h1 id="ubuntu-装修" tabindex="-1">Ubuntu 装修 <a class="header-anchor" href="#ubuntu-装修" aria-label="Permalink to &quot;Ubuntu 装修&quot;"></a></h1>
-<div class="tip custom-block"><p class="custom-block-title">TIP</p>
-<p>踩过的坑，最后会铺成一条平坦的路</p>
 </div>
 ]]></content:encoded>
         </item>
@@ -1964,181 +2152,6 @@ ping 【上面ifconfig得到的地址】
 ]]></content:encoded>
         </item>
         <item>
-            <title><![CDATA[关于我]]></title>
-            <link>https://ljc0606.cn/about</link>
-            <guid>https://ljc0606.cn/about</guid>
-            <pubDate>Sat, 26 Oct 2024 10:16:48 GMT</pubDate>
-            <description><![CDATA[
-<img width=100% src="/public/img/svg/about-me-header.svg" alt="头部图" />
-<p align="center">
-  <a href="https://blog.charles7c.top/" target="_blank" style="display: inline-block;">
-    <img alt="个人主页" src="https://img.shields.io/badge/知识库-查尔斯-lightblue?logo=blogger&logoColor=lightblue" />
-  </a>&nbsp;
-    <a href="https://github.com/Charles7c" target="_blank" style="display: inline-block;">
-        <img alt="GitHub个人主页" src="https://img.shields.io/badge/GitHub-Charles7c-lightblue?logo=github" />
-    </a>&nbsp;
-    <a href="https://gitee.com/Charles7c" target="_blank" style="display: inline-block;">
-        <img alt="码云个人主页" src="https://img.shields.io/badge/码云-Charles7c-C71D23?logo=gitee&logoColor=C71D23" />
-    </a>&nbsp;
-    <a href="https://blog.csdn.net/Charles_7c" target="_blank" style="display: inline-block;">
-        <img alt="CSDN个人主页" src="https://img.shields.io/badge/CSDN-查尔斯-FC5531?logo=C&logoColor=FC5531" />
-    </a>&nbsp;
-    <a href="https://juejin.cn/user/685744115170142" target="_blank" style="display: inline-block;">
-        <img alt="掘金个人主页" src="https://img.shields.io/badge/掘金-查尔斯-1E80FF" />
-    </a>&nbsp;
-    <a href="https://www.yuque.com/charles7c" target="_blank" style="display: inline-block;">
-        <img alt="语雀个人主页" src="https://img.shields.io/badge/语雀-查尔斯-38D27D" />
-    </a>&nbsp;
-</p>
-
-]]></description>
-            <content:encoded><![CDATA[<img width=100% src="/public/img/svg/about-me-header.svg" alt="头部图" />
-<p align="center">
-  <a href="https://blog.charles7c.top/" target="_blank" style="display: inline-block;">
-    <img alt="个人主页" src="https://img.shields.io/badge/知识库-查尔斯-lightblue?logo=blogger&logoColor=lightblue" />
-  </a>&nbsp;
-    <a href="https://github.com/Charles7c" target="_blank" style="display: inline-block;">
-        <img alt="GitHub个人主页" src="https://img.shields.io/badge/GitHub-Charles7c-lightblue?logo=github" />
-    </a>&nbsp;
-    <a href="https://gitee.com/Charles7c" target="_blank" style="display: inline-block;">
-        <img alt="码云个人主页" src="https://img.shields.io/badge/码云-Charles7c-C71D23?logo=gitee&logoColor=C71D23" />
-    </a>&nbsp;
-    <a href="https://blog.csdn.net/Charles_7c" target="_blank" style="display: inline-block;">
-        <img alt="CSDN个人主页" src="https://img.shields.io/badge/CSDN-查尔斯-FC5531?logo=C&logoColor=FC5531" />
-    </a>&nbsp;
-    <a href="https://juejin.cn/user/685744115170142" target="_blank" style="display: inline-block;">
-        <img alt="掘金个人主页" src="https://img.shields.io/badge/掘金-查尔斯-1E80FF" />
-    </a>&nbsp;
-    <a href="https://www.yuque.com/charles7c" target="_blank" style="display: inline-block;">
-        <img alt="语雀个人主页" src="https://img.shields.io/badge/语雀-查尔斯-38D27D" />
-    </a>&nbsp;
-</p>
-<hr>
-<ul>
-<li>👋 Hi, I'm Charles7c</li>
-<li>🔭 I'm currently working on backend development</li>
-<li>📫 How to reach me: <a href="mailto:charles7c@126.com" target="_blank" rel="noreferrer">charles7c@126.com</a></li>
-<li>📖 My motto: “东隅已逝，桑榆非晚。”</li>
-</ul>
-<hr>
-<h3 id="后端技术栈" tabindex="-1">后端技术栈 <a class="header-anchor" href="#后端技术栈" aria-label="Permalink to &quot;后端技术栈&quot;"></a></h3>
-<p>
-  <img src="https://img.shields.io/badge/-Spring-6DB33F?logo=Spring&logoColor=FFF" alt="Spring" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Spring%20Boot-6DB33F?logo=Spring-Boot&logoColor=FFF" alt="Spring Boot" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MySQL-4479A1?logo=MySQL&logoColor=FFF" alt="MySQL" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MariaDB-A9A9A9?logo=MariaDB&logoColor=003545" alt="MariaDB" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-PostgreSQL-C0C0C0?logo=PostgreSQL&logoColor=4169E1" alt="PostgreSQL" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Oracle-C0C0C0?logo=Oracle&logoColor=F80000" alt="Oracle" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Microsoft%20SQL%20Server-D3D3D3?logo=Microsoft-SQL-Server&logoColor=CC2927" alt="Microsoft SQL Server" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Redis-DC382D?logo=Redis&logoColor=FFF" alt="Redis" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-MongoDB-47A248?logo=MongoDB&logoColor=FFF" alt="MongoDB" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-RabbitMQ-FF6600?logo=RabbitMQ&logoColor=FFF" alt="RabbitMQ" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Solr-D9411E?logo=Apache-Solr&logoColor=FFF" alt="Solr" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ElasticSearch-005571?logo=ElasticSearch&logoColor=FFF" alt="ElasticSearch" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Logstash-A9A9A9?logo=Logstash&logoColor=005571" alt="Logstash" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kibana-A9A9A9?logo=Kibana&logoColor=005571" alt="Kibana" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kafka-C0C0C0?logo=Apache-Kafka&logoColor=231F20" alt="Kafka" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Consul-F24C53?logo=Consul&logoColor=FFF" alt="Consul" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Tomcat-F8DC75?logo=Apache-Tomcat&logoColor=000" alt="Tomcat" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JUnit5-25A162?logo=JUnit5&logoColor=FFF" alt="JUnit5" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Liquibase-2962FF?logo=Liquibase&logoColor=FFF" alt="Liquibase" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Maven-C71A36?logo=Apache-Maven&logoColor=FFF" alt="Maven" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Gradle-D3D3D3?logo=Gradle&logoColor=02303A" alt="Gradle" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Spring%20Security-6DB33F?logo=Spring-Security&logoColor=FFF" alt="Spring Security" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Hibernate-59666C?logo=Hibernate&logoColor=FFF" alt="Hibernate" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JSON-000?logo=JSON&logoColor=FFF" alt="JSON" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JWT-000?logo=JSON-Web-Tokens&logoColor=FFF" alt="JWT" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Java-F78C40?logo=OpenJDK&logoColor=FFF" alt="Java" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Python-A9A9A9?logo=Python&logoColor=3776AB" alt="Python" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Android-C0C0C0?logo=Android&logoColor=3DDC84" alt="Android" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Go-DCDCDC?logo=Go&logoColor=00ADD8" alt="Go" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GraphQL-FFF?logo=GraphQL&logoColor=E10098" alt="GraphQL" style="display: inline-block;" />&nbsp;
-</p>
-<h3 id="前端技术栈" tabindex="-1">前端技术栈 <a class="header-anchor" href="#前端技术栈" aria-label="Permalink to &quot;前端技术栈&quot;"></a></h3>
-<p>
-  <img src="https://img.shields.io/badge/-Vue3-C0C0C0?logo=Vue.js&logoColor=4FC08D" alt="Vue3" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-TypeScript-C0C0C0?logo=TypeScript&logoColor=3178C6" alt="TypeScript" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ant%20Design-C0C0C0?logo=Ant-Design&logoColor=0170FE" alt="Ant Design" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Node.js-D3D3D3?logo=Node.js&logoColor=339933" alt="Node.js" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Vite-D3D3D3?logo=Vite&logoColor=646CFF" alt="Vite" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Webpack-D3D3D3?logo=Webpack&logoColor=8DD6F9" alt="Webpack" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-NPM-C0C0C0?logo=npm&logoColor=CB3837" alt="NPM" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Axios-C0C0C0?logo=Axios&logoColor=5A29E4" alt="Axios" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ESLint-C0C0C0?logo=ESLint&logoColor=4B32C3" alt="ESLint" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-jQuery-0769AD?logo=jQuery&logoColor=FFF" alt="jQuery" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Bootstrap-7952B3?logo=Bootstrap&logoColor=FFF" alt="BootStrap" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-ECharts-C0C0C0?logo=Apache-ECharts&logoColor=AA344D" alt="ECharts" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JavaScript-A9A9A9?logo=JavaScript&logoColor=F7DF1E" alt="JavaScript" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-HTML5-A9A9A9?logo=HTML5&logoColor=E34F26" alt="HTML5" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-CSS3-A9A9A9?logo=CSS3&logoColor=1572B6" alt="CSS3" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Tailwind%20CSS-FFF?logo=Tailwind-CSS&logoColor=06B6D4" alt="Tailwind CSS" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Less-D3D3D3?logo=Less&logoColor=1D365D" alt="Less" style="display: inline-block;" />&nbsp;
-</p>
-<h3 id="devops" tabindex="-1">DevOps <a class="header-anchor" href="#devops" aria-label="Permalink to &quot;DevOps&quot;"></a></h3>
-<p>
-  <img src="https://img.shields.io/badge/-Git-F05032?logo=Git&logoColor=FFF" alt="Git" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub-181717?logo=GitHub&logoColor=FFF" alt="GitHub" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Gitee-C71D23?logo=Gitee&logoColor=FFF" alt="Gitee" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitLab-FC6D26?logo=GitLab&logoColor=FFF" alt="gitlab" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub%20Actions-2088FF?logo=GitHub-Actions&logoColor=FFF" alt="GitHub Actions" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Jenkins-D24939?logo=Jenkins&logoColor=000" alt="Jenkins" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-SonarQube-A9A9A9?logo=SonarQube&logoColor=4E9BCD" alt="SonarQube" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Docker-2496ED?logo=Docker&logoColor=FFF" alt="Docker" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Harbor-FFF?logo=Harbor&logoColor=60B932" alt="Harbor" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Kubernetes-326CE5?logo=Kubernetes&logoColor=FFF" alt="Kubernetes" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-CentOS-262577?logo=CentOS&logoColor=FFF" alt="CentOS" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ubuntu-E95420?logo=Ubuntu&logoColor=FFF" alt="Ubuntu" style="display: inline-block;" />&nbsp;
-</p>
-<h3 id="运维技术栈" tabindex="-1">运维技术栈 <a class="header-anchor" href="#运维技术栈" aria-label="Permalink to &quot;运维技术栈&quot;"></a></h3>
-<p>
-  <img src="https://img.shields.io/badge/-阿里云-FF6A00?logo=Alibaba-Cloud&logoColor=FFF" alt="阿里云" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Nginx-009639?logo=Nginx&logoColor=FFF" alt="Nginx" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-VMware-607078?logo=VMware&logoColor=FFF" alt="VMware" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Prometheus-C0C0C0?logo=Prometheus&logoColor=E6522C" alt="Prometheus" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Grafana-DCDCDC?logo=Grafana&logoColor=F46800" alt="Grafana" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Ansible-FFF?logo=Ansible&logoColor=EE0000" alt="Ansible" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Lua-FFF?&logo=Lua&logoColor=2C2D72" alt="Lua" style="display: inline-block;" />&nbsp;
-</p>
-<h3 id="测试技术栈" tabindex="-1">测试技术栈 <a class="header-anchor" href="#测试技术栈" aria-label="Permalink to &quot;测试技术栈&quot;"></a></h3>
-<p>
-  <img src="https://img.shields.io/badge/-Postman-FF6C37?logo=Postman&logoColor=FFF" alt="Postman" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-JMeter-D3D3D3?logo=Apache-JMeter&logoColor=D22128" alt="JMeter" style="display: inline-block;" />&nbsp;
-</p>
-<h3 id="开发工具" tabindex="-1">开发工具 <a class="header-anchor" href="#开发工具" aria-label="Permalink to &quot;开发工具&quot;"></a></h3>
-<p>
-  <img src="https://img.shields.io/badge/-Intellij%20IDEA-000?logo=Intellij-IDEA&logoColor=FFF" alt="Intellij IDEA" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Eclipse-2C2255?logo=Eclipse&logoColor=FFF" alt="Eclipse" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-WebStorm-000?logo=WebStorm&logoColor=FFF" alt="WebStorm" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-PyCharm-C0C0C0?logo=PyCharm&logoColor=000" alt="PyCharm" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Android%20Studio-C0C0C0?logo=Android-Studio&logoColor=3DDC84" alt="Android Studio" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-VSCode-C0C0C0?logo=Visual-Studio-Code&logoColor=007ACC" alt="VSCode" style="display: inline-block;" />&nbsp;
-</p>
-<h3 id="其他" tabindex="-1">其他 <a class="header-anchor" href="#其他" aria-label="Permalink to &quot;其他&quot;"></a></h3>
-<p>
-  <img src="https://img.shields.io/badge/-Markdown-000?logo=Markdown&logoColor=FFF" alt="Markdown" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-WordPress-21759B?logo=WordPress&logoColor=FFF" alt="WordPress" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-GitHub%20Pages-222?logo=GitHub-Pages&logoColor=FFF" alt="GitHub Pages" style="display: inline-block;" />&nbsp;
-  <img src="https://img.shields.io/badge/-Adobe%20Photoshop-A9A9A9?logo=Adobe-Photoshop&logoColor=31A8FF" alt="Adobe Photoshop" style="display: inline-block;" />&nbsp;
-</p>
-<img width=100% src="/public/img/svg/about-footer.svg" alt="尾部图"/>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA["杂碎"逆袭史]]></title>
-            <link>https://ljc0606.cn/categories/fragments/</link>
-            <guid>https://ljc0606.cn/categories/fragments/</guid>
-            <pubDate>Sat, 26 Oct 2024 10:16:48 GMT</pubDate>
-            <description><![CDATA["杂碎"逆袭史
-::: tip 笔者说
-碎片化知识的时代，纵然知晓不成体系的知识仅仅只能积累经验，却无法有效提升，但身在其中还是要如此，记录碎片知识，留作备忘。说不定后面还有机会 “把点连成线”。
-:]]></description>
-            <content:encoded><![CDATA[<h1 id="杂碎-逆袭史" tabindex="-1">&quot;杂碎&quot;逆袭史 <a class="header-anchor" href="#杂碎-逆袭史" aria-label="Permalink to &quot;&quot;杂碎&quot;逆袭史&quot;"></a></h1>
-<div class="tip custom-block"><p class="custom-block-title">笔者说</p>
-<p>碎片化知识的时代，纵然知晓不成体系的知识仅仅只能积累经验，却无法有效提升，但身在其中还是要如此，记录碎片知识，留作备忘。说不定后面还有机会 “把点连成线”。</p>
-</div>
-]]></content:encoded>
-        </item>
-        <item>
             <title><![CDATA[Bug 万象集]]></title>
             <link>https://ljc0606.cn/categories/issues/</link>
             <guid>https://ljc0606.cn/categories/issues/</guid>
@@ -2167,19 +2180,6 @@ import { NAV_DATA } from './data'
 <div class="tip custom-block"><p class="custom-block-title">TIP</p>
 <p>该导航基于 <a href="https://github.com/maomao1996" target="_blank" rel="noreferrer">maomao</a> 开发的基础上修改</p>
 </div>
-]]></content:encoded>
-        </item>
-        <item>
-            <title><![CDATA[我的标签]]></title>
-            <link>https://ljc0606.cn/tags</link>
-            <guid>https://ljc0606.cn/tags</guid>
-            <pubDate>Sat, 26 Oct 2024 10:16:48 GMT</pubDate>
-            <description><![CDATA[&lt;ClientOnly
-	&lt;Tag /&gt;
-&lt;/ClientOnly&gt;]]></description>
-            <content:encoded><![CDATA[<ClientOnly>
-	<Tag />
-</ClientOnly>
 ]]></content:encoded>
         </item>
         <item>
@@ -2629,7 +2629,7 @@ TINYINT：[0, 255]
 <h3 id="如果确定结果只有一条-使用-limit-1" tabindex="-1">如果确定结果只有一条，使用 LIMIT 1 <Badge text="建议" /> <a class="header-anchor" href="#如果确定结果只有一条-使用-limit-1" aria-label="Permalink to &quot;如果确定结果只有一条，使用 LIMIT 1 &lt;Badge text=&quot;建议&quot; /&gt;&quot;"></a></h3>
 <p>我们在根据一个或多个条件查询数据时，如果确定查询结果只有一条，可以在结尾处添加 LIMIT 1 进行限制。</p>
 <p>这样既可以让 EXPLAIN 中的 type 达到 const 类型，又可以免去担忧在程序中出现接收是单个对象却返回了一个集合对象的异常问题。</p>
-<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-wYUL_" id="tab-FXDKgz5" checked><label data-title="正例" for="tab-FXDKgz5">正例</label><input type="radio" name="group-wYUL_" id="tab-cpJ77v_" ><label data-title="反例" for="tab-cpJ77v_">反例</label></div><div class="blocks">
+<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-D1xgz" id="tab-QguCz9k" checked><label data-title="正例" for="tab-QguCz9k">正例</label><input type="radio" name="group-D1xgz" id="tab-3k2m73g" ><label data-title="反例" for="tab-3k2m73g">反例</label></div><div class="blocks">
 <div class="language-sql vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">sql</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"># email 不是主键，也没有设置唯一约束，根据熵增定律，查询结果是有可能会出现多条的</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">SELECT</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> *</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> FROM</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> `sys_user`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> WHERE</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> `email`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> 'charles7c@126.com'</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> LIMIT</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span></code></pre>
 <div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language-sql vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">sql</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"># user_id 是主键，主键是非空唯一的，那么不需要添加 </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">LIMIT</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> 进行限制</span></span>
@@ -2637,14 +2637,14 @@ TINYINT：[0, 255]
 <div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div></div></div>
 <h3 id="避免隐式类型转换" tabindex="-1">避免隐式类型转换 <Badge text="强制" type="danger" /> <a class="header-anchor" href="#避免隐式类型转换" aria-label="Permalink to &quot;避免隐式类型转换 &lt;Badge text=&quot;强制&quot; type=&quot;danger&quot; /&gt;&quot;"></a></h3>
 <p>我们在使用 MySQL 时，或多或少都感受过 MySQL 的隐式类型转换。例如：user_id 是整数类型，但是依然可以使用字符串类型数据来进行判断。MySQL 帮你做完这种隐式类型转换是有代价的，什么代价呢？ <strong>索引不再生效了而已</strong> 。</p>
-<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-RG_tH" id="tab-98XngJX" checked><label data-title="正例" for="tab-98XngJX">正例</label><input type="radio" name="group-RG_tH" id="tab-m4NB1qo" ><label data-title="反例" for="tab-m4NB1qo">反例</label></div><div class="blocks">
+<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-CbzKv" id="tab-BBsLbZx" checked><label data-title="正例" for="tab-BBsLbZx">正例</label><input type="radio" name="group-CbzKv" id="tab-qWEYTxz" ><label data-title="反例" for="tab-qWEYTxz">反例</label></div><div class="blocks">
 <div class="language-sql vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">sql</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">SELECT</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> *</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> FROM</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> `sys_user`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> WHERE</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> `user_id`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF"> 10</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span></code></pre>
 <div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-sql vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">sql</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">SELECT</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> *</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> FROM</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> `sys_user`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> WHERE</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> `user_id`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> =</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF"> '10'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">;</span></span></code></pre>
 <div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div></div></div>
 <h2 id="数据库表设计" tabindex="-1">数据库表设计 <a class="header-anchor" href="#数据库表设计" aria-label="Permalink to &quot;数据库表设计&quot;"></a></h2>
 <h3 id="列名带上前缀" tabindex="-1">列名带上前缀 <Badge text="建议" /> <a class="header-anchor" href="#列名带上前缀" aria-label="Permalink to &quot;列名带上前缀 &lt;Badge text=&quot;建议&quot; /&gt;&quot;"></a></h3>
 <p>部分列名带上前缀或缩写，可以有效减少在连接查询、ORM 映射等场景下刻意起别名或思考区分不同的问题。</p>
-<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-KXGY8" id="tab-x_q3_eZ" checked><label data-title="正例" for="tab-x_q3_eZ">正例</label></div><div class="blocks">
+<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-MeMNV" id="tab-DyiYKL_" checked><label data-title="正例" for="tab-DyiYKL_">正例</label></div><div class="blocks">
 <div class="language-sql vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">sql</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">CREATE</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> TABLE</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> `</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0">sys_customer</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">` (</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  `customer_id`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> bigint</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">20</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) UNSIGNED </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">NOT NULL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> AUTO_INCREMENT COMMENT </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'客户ID'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
 <span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">  `customer_name`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> varchar</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">255</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">NOT NULL</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> COMMENT </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'客户名称'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">,</span></span>
@@ -2664,7 +2664,7 @@ TINYINT：[0, 255]
 <div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div></div></div>
 <h3 id="非负数列添加-unsigned-无符号约束" tabindex="-1">非负数列添加 UNSIGNED 无符号约束 <Badge text="建议" /> <a class="header-anchor" href="#非负数列添加-unsigned-无符号约束" aria-label="Permalink to &quot;非负数列添加 UNSIGNED 无符号约束 &lt;Badge text=&quot;建议&quot; /&gt;&quot;"></a></h3>
 <p>在大部分的数据存储场景中，我们只会使用正整数，如果能确定该列为非负数，建议添加 <code>UNSIGNED</code> 无符号约束。</p>
-<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-Xryk2" id="tab-ztq05CZ" checked><label data-title="正例" for="tab-ztq05CZ">正例</label></div><div class="blocks">
+<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-DYNf5" id="tab-s1ubCLc" checked><label data-title="正例" for="tab-s1ubCLc">正例</label></div><div class="blocks">
 <div class="language-sql vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">sql</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"># 不添加 UNSIGNED 约束，取值范围</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">TINYINT</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">：[-128, 127]</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"># 添加 UNSIGNED 约束，取值范围</span></span>
@@ -2717,7 +2717,7 @@ TINYINT：[0, 255]
 </table>
 <h3 id="布尔列采用-bit-类型" tabindex="-1">布尔列采用 bit 类型 <Badge text="建议" /> <a class="header-anchor" href="#布尔列采用-bit-类型" aria-label="Permalink to &quot;布尔列采用 bit 类型 &lt;Badge text=&quot;建议&quot; /&gt;&quot;"></a></h3>
 <p>例如：是否删除这种只有两种状态的信息，在表设计时建议对该列设置 <code>bit</code> 类型（0 表示否/假/false，1 表示是/真/true），在程序语言中可以采用 boolean 类型对应。</p>
-<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-ZHcSf" id="tab-JHKe1kM" checked><label data-title="SQL" for="tab-JHKe1kM">SQL</label><input type="radio" name="group-ZHcSf" id="tab-TTeiEMD" ><label data-title="Java" for="tab-TTeiEMD">Java</label></div><div class="blocks">
+<div class="vp-code-group vp-adaptive-theme"><div class="tabs"><input type="radio" name="group-CL1Sq" id="tab-sPRd96K" checked><label data-title="SQL" for="tab-sPRd96K">SQL</label><input type="radio" name="group-CL1Sq" id="tab-GGsougt" ><label data-title="Java" for="tab-GGsougt">Java</label></div><div class="blocks">
 <div class="language-sql vp-adaptive-theme active line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">sql</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">`is_deleted`</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> bit</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">(</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF">1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">) </span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">NOT NULL</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> DEFAULT</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> b</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'0'</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> COMMENT </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">'是否已删除（0否 1是）'</span></span></code></pre>
 <div class="line-numbers-wrapper" aria-hidden="true"><span class="line-number">1</span><br></div></div><div class="language-java vp-adaptive-theme line-numbers-mode"><button title="Copy Code" class="copy"></button><span class="lang">java</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0" v-pre=""><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">@</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">Data</span></span>
 <span class="line"><span style="--shiki-light:#D73A49;--shiki-dark:#F97583">public</span><span style="--shiki-light:#D73A49;--shiki-dark:#F97583"> class</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> User</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8"> {</span></span>

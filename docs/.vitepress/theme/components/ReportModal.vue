@@ -193,6 +193,18 @@ export default {
       breakMinutes: 0
     })
 
+    const processStatsForDisplay = (stats) => {
+      return Object.entries(stats).map(([date, data]) => ({
+        date,
+        pomodoro: data.pomodoro || 0,
+        shortBreak: data.shortBreak || 0,
+        longBreak: data.longBreak || 0,
+        focusMinutes: data.focusMinutes || 0,
+        breakMinutes: data.breakMinutes || 0,
+        totalMinutes: (data.focusMinutes || 0) + (data.breakMinutes || 0)
+      })).sort((a, b) => new Date(a.date) - new Date(b.date));
+    };
+
     // Watch statsData prop changes
     watch(() => props.statsData, (newData) => {
       console.log('Stats data updated:', newData)
@@ -234,9 +246,38 @@ export default {
     }
 
     const updateDateRange = () => {
-      console.log('Updating date range:', { start: startDate.value, end: endDate.value })
-      emit('update-date-range', startDate.value, endDate.value)
+      if (typeof window === 'undefined') return;
+
+      console.log('Updating date range:', { start: startDate.value, end: endDate.value });
+      try {
+        localStorage.setItem('reportStartDate', startDate.value);
+        localStorage.setItem('reportEndDate', endDate.value);
+        emit('update-date-range', startDate.value, endDate.value);
+      } catch (e) {
+        console.error('Error saving date range:', e);
+      }
     }
+
+    // 添加 SSR 安全的存储访问函数
+    const safeStorage = {
+      getItem(key) {
+        if (typeof window === 'undefined') return null;
+        try {
+          return localStorage.getItem(key);
+        } catch (e) {
+          console.error('Error reading from storage:', e);
+          return null;
+        }
+      },
+      setItem(key, value) {
+        if (typeof window === 'undefined') return;
+        try {
+          localStorage.setItem(key, value);
+        } catch (e) {
+          console.error('Error writing to storage:', e);
+        }
+      }
+    };
 
     const updateCharts = () => {
       console.log('Starting updateCharts function')
@@ -401,23 +442,64 @@ export default {
 
     const toggleEditMode = () => {
       if (isEditing.value) {
-        // Save changes
-        Object.assign(stats.value, editedStats.value)
-        emit('save-stats', editedStats.value)
-        isEditing.value = false
+        // 对数据进行处理和验证
+        const processedStats = {};
+        Object.entries(editedStats.value).forEach(([date, data]) => {
+          // 修改次数逻辑
+          const focusCount = data.focusMinutes > 0 ? Math.max(1, data.pomodoro || 0) : 0;
+          const shortBreakCount = data.breakMinutes > 0 ? Math.max(1, data.shortBreak || 0) : 0;
+          const longBreakCount = data.breakMinutes > 0 ? Math.max(1, data.longBreak || 0) : 0;
+
+          processedStats[date] = {
+            pomodoro: focusCount,
+            shortBreak: shortBreakCount,
+            longBreak: longBreakCount,
+            focusMinutes: data.focusMinutes || 0,
+            breakMinutes: data.breakMinutes || 0,
+            // 总时间为专注时间和休息时间的总和
+            totalMinutes: (data.focusMinutes || 0) + (data.breakMinutes || 0)
+          };
+        });
+
+        console.log('Saving processed stats:', processedStats);
+        emit('save-stats', processedStats);
+        // 更新本地数据
+        stats.value = processedStats;
+        // 重新计算总计数据
+        totalStats.value = calculateTotalStats(stats.value);
+        // 更新图表
+        updateCharts();
       } else {
-        // Enter edit mode
-        editedStats.value = JSON.parse(JSON.stringify(stats.value))
-        isEditing.value = true
+        // 进入编辑模式
+        editedStats.value = JSON.parse(JSON.stringify(stats.value));
       }
-    }
+      isEditing.value = !isEditing.value;
+    };
 
     // Update the watch for date range changes
     watch([startDate, endDate], () => {
-      updateDateRange()
+      if (typeof window === 'undefined') return;
+      updateDateRange();
     }, { immediate: true })
 
     onMounted(() => {
+      if (typeof window === 'undefined') return;
+
+      // 尝试从localStorage加载保存的日期范围
+      const savedStartDate = safeStorage.getItem('reportStartDate');
+      const savedEndDate = safeStorage.getItem('reportEndDate');
+
+      if (savedStartDate) {
+        startDate.value = savedStartDate;
+      }
+      if (savedEndDate) {
+        endDate.value = savedEndDate;
+      }
+
+      console.log('Component mounted with date range:', {
+        start: startDate.value,
+        end: endDate.value
+      });
       console.log('Component mounted')
       console.log('Trend chart ref:', trendChartRef.value)
       console.log('Pie chart ref:', pieChartRef.value)

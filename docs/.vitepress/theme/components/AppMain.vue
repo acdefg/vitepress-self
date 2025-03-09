@@ -105,10 +105,19 @@ export default {
       // Use the helper function
       currentUser.value = getLocalStorage('currentUser')
 
-      // Load saved settings on mount
+      // Load settings on mount
       const savedSettings = getLocalStorage('customTimes')
       if (savedSettings) {
         timerSettings.value = savedSettings
+      }
+
+      // 加载保存的日期范围
+      const savedStartDate = localStorage.getItem('reportStartDate');
+      const savedEndDate = localStorage.getItem('reportEndDate');
+
+      if (savedStartDate && savedEndDate) {
+        console.log('Loading saved date range:', { start: savedStartDate, end: savedEndDate });
+        handleReportData(savedStartDate, savedEndDate);
       }
     })
 
@@ -156,34 +165,33 @@ export default {
 
     // 将统计数据传递给 ReportModal
     const handleReportData = (startDate, endDate) => {
-      console.log('Handling report data:', { startDate, endDate })
+      console.log('Handling report data:', { startDate, endDate });
+      const user = getLocalStorage('currentUser');
+      console.log('Current user:', user);
 
-      // Get current user
-      const user = getLocalStorage('currentUser')
-      console.log('Current user:', user)
+      const statsKey = user ? `stats_${user.id}` : 'anonymous_stats';
+      const statsData = getLocalStorage(statsKey);
+      console.log('Retrieved stats:', { key: statsKey, data: statsData });
 
-      // Get stats data
-      const statsKey = user ? `stats_${user.id}` : 'anonymous_stats'
-      const statsData = getLocalStorage(statsKey)
-      console.log('Retrieved stats:', { key: statsKey, data: statsData })
-
-      // Create range data
-      const range = {}
-      let current = new Date(startDate)
-      const endDateTime = new Date(endDate)
+      // 创建标准化范围数据
+      const range = {};
+      let current = new Date(startDate);
+      const endDateTime = new Date(endDate);
 
       while (current <= endDateTime) {
-        const dateStr = current.toISOString().split('T')[0]
+        const dateStr = current.toISOString().split('T')[0];
         range[dateStr] = {
           pomodoro: 0,
           shortBreak: 0,
           longBreak: 0,
+          focusMinutes: 0,
+          breakMinutes: 0,
           totalMinutes: 0
-        }
-        current.setDate(current.getDate() + 1)
+        };
+        current.setDate(current.getDate() + 1);
       }
 
-      // Merge actual data
+      // 合并和规范化实际数据
       if (statsData) {
         Object.entries(statsData).forEach(([date, data]) => {
           if (range[date]) {
@@ -191,20 +199,30 @@ export default {
               pomodoro: data.pomodoro || 0,
               shortBreak: data.shortBreak || 0,
               longBreak: data.longBreak || 0,
-              totalMinutes: data.totalMinutes || 0
-            }
+              focusMinutes: data.focusMinutes || 0,
+              breakMinutes: data.breakMinutes || 0,
+              totalMinutes: (data.focusMinutes || 0) + (data.breakMinutes || 0)
+            };
           }
-        })
+        });
       }
 
-      console.log('Final range data:', range)
-      reportData.value = range
+      console.log('Processed range data:', range);
+      currentStats.value = range;
     }
 
     // Add handleDateRangeUpdate function
     const handleDateRangeUpdate = (startDate, endDate) => {
-      console.log('Updating date range:', { startDate, endDate })
-      handleReportData(startDate, endDate)
+      if (typeof window === 'undefined') return;
+
+      console.log('Updating date range:', { startDate, endDate });
+      try {
+        localStorage.setItem('reportStartDate', startDate);
+        localStorage.setItem('reportEndDate', endDate);
+        handleReportData(startDate, endDate);
+      } catch (e) {
+        console.error('Error updating date range:', e);
+      }
     }
 
     const handleLoginModalClose = () => {
@@ -225,18 +243,26 @@ export default {
       }
     }
 
+    const loadUserStats = () => {
+      const userId = currentUser.value?.id || 'anonymous';
+      const storageKey = userId === 'anonymous' ? 'anonymous_stats' : `stats_${userId}`;
+      const stats = getLocalStorage(storageKey) || {};
+      currentStats.value = stats;
+      console.log('Loaded user stats:', stats);
+      return stats;
+    };
+
     const handleStatsUpdate = (updatedStats) => {
+      console.log('Handling stats update:', updatedStats);
       // Update local storage
-      const userId = currentUser.value?.id || 'anonymous'
-      const storageKey = userId === 'anonymous' ? 'anonymous_stats' : `stats_${userId}`
-      localStorage.setItem(storageKey, JSON.stringify(updatedStats))
+      const userId = currentUser.value?.id || 'anonymous';
+      const storageKey = userId === 'anonymous' ? 'anonymous_stats' : `stats_${userId}`;
+      localStorage.setItem(storageKey, JSON.stringify(updatedStats));
 
       // Update current stats
-      currentStats.value = updatedStats
-
-      // Force reload stats to reflect changes
-      loadUserStats()
-    }
+      currentStats.value = updatedStats;
+      console.log('Updated stats:', currentStats.value);
+    };
 
     const logout = () => {
       console.log('Logging out')
@@ -264,6 +290,7 @@ export default {
       reportData,
       handleLoginModalClose,
       handleLoginSuccess,
+      loadUserStats,
       handleStatsUpdate,
       logout,
       currentStats,
