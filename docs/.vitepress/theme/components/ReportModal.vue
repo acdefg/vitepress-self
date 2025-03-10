@@ -319,6 +319,11 @@ export default {
       console.log('Current stats:', stats.value)
 
       nextTick(() => {
+        if (!stats.value || Object.keys(stats.value).length === 0) {
+          console.log('No stats data available')
+          return
+        }
+
         // Clear existing charts
         if (trendChart) {
           console.log('Destroying existing trend chart')
@@ -340,15 +345,11 @@ export default {
         if (trendCtx) {
           console.log('Found trend chart context')
 
-          // Prepare trend data
-          const trendData = dates.map(date => {
-            const minutes = stats.value[date]?.focusMinutes || 0
-            //console.log(`Date ${date}: ${minutes} minutes`)
-            return {
-              date: formatDate(date),
-              minutes: minutes
-            }
-          })
+          // 确保数据有效性
+          const trendData = dates.map(date => ({
+            date: formatDate(date),
+            minutes: stats.value[date]?.focusMinutes || 0
+          }))
 
           console.log('Trend chart data:', trendData)
 
@@ -358,7 +359,7 @@ export default {
               labels: trendData.map(d => d.date),
               datasets: [{
                 label: '专注时间(小时)',
-                data: trendData.map(d => d.minutes / 60),
+                data: trendData.map(d => Math.max(0, d.minutes / 60)),
                 borderColor: '#ba4949',
                 backgroundColor: 'rgba(186, 73, 73, 0.1)',
                 fill: false,
@@ -378,38 +379,21 @@ export default {
                 y: {
                   beginAtZero: true,
                   ticks: {
-                    callback: value => `${value.toFixed(1)}h`,
+                    callback: value => `${Math.max(0, value).toFixed(1)}h`,
                   }
                 }
               }
             }
           })
-        } else {
-          console.warn('Trend chart context not found')
         }
 
-        // Create pie chart
+        // Create pie chart with safeguards
         const pieCtx = pieChartRef.value?.getContext('2d')
         if (pieCtx) {
-          console.log('Found pie chart context')
-
-          // Calculate totals
-          const totalFocusMinutes = dates.reduce((sum, date) => {
-            const minutes = stats.value[date]?.focusMinutes || 0
-            // console.log(`Date ${date} focus minutes: ${minutes}`)
-            return sum + minutes
-          }, 0)
-
-          const totalBreakMinutes = dates.reduce((sum, date) => {
-            const minutes = stats.value[date]?.breakMinutes || 0
-            // console.log(`Date ${date} break minutes: ${minutes}`)
-            return sum + minutes
-          }, 0)
-
-          console.log('Total minutes:', {
-            focus: totalFocusMinutes,
-            break: totalBreakMinutes
-          })
+          const totalFocusMinutes = Math.max(0, dates.reduce((sum, date) =>
+            sum + (stats.value[date]?.focusMinutes || 0), 0))
+          const totalBreakMinutes = Math.max(0, dates.reduce((sum, date) =>
+            sum + (stats.value[date]?.breakMinutes || 0), 0))
 
           pieChart = new Chart(pieCtx, {
             type: 'pie',
@@ -425,8 +409,6 @@ export default {
               maintainAspectRatio: false
             }
           })
-        } else {
-          console.warn('Pie chart context not found')
         }
       })
     }

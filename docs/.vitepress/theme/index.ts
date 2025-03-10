@@ -35,9 +35,14 @@ export default {
     app.component('MNavLinks', MNavLinks)
     app.component('Tag', Tag)
     app.component('WordCloud', WordCloud)
-    app.component('AdminPanel', () => import('./components/AdminPanel.vue'))
+    // app.component('AdminPanel', () => import('./components/AdminPanel.vue'))
     app.component('AppMain', () => import('./components/AppMain.vue'))
     app.component('Timer', () => import('./components/Timer.vue'))
+    app.component('ReportModal', () => import('./components/ReportModal.vue'))
+    app.component('RoomModal', () => import('./components/RoomModal.vue'))
+    app.component('SettingsModal', () => import('./components/SettingsModal.vue'))
+    app.component('WishWallModal', () => import('./components/WishWallModal.vue'))
+    app.component('LoginModal', () => import('./components/LoginModal.vue'))
 
 
     if (typeof window !== 'undefined') {

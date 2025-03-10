@@ -140,6 +140,7 @@ export default {
           // 从累积时间继续计时
           startTime.value = Date.now() - (elapsedTime.value * 1000)
           console.log("second start with elapsed time:", elapsedTime.value)
+          console.log("accumulated time:", accumulatedTime.value)
         }
 
         timerId.value = setInterval(() => {
@@ -169,6 +170,11 @@ export default {
       clearTimeout(continuePromptTimer.value)
 
       const totalTime = accumulatedTime.value + elapsedTime.value
+      console.log('Resetting timer:', {
+        mode: currentMode.value,
+        elapsed: elapsedTime.value,
+        accumulated: accumulatedTime.value
+      })
       const isBreakMode = currentMode.value === 'shortBreak' || currentMode.value === 'longBreak'
       const meetsMinTime = isBreakMode ?
         totalTime >= MIN_BREAK_TIME :
@@ -176,6 +182,7 @@ export default {
 
       // self delete condition ： sessionComplete.value = false
       if (!lastSessionSaved.value && meetsMinTime) {
+        console.log('Saving stats on reset')
         saveAccumulatedStats()
         emit('update-stats')
       }
@@ -203,6 +210,7 @@ export default {
           totalTime >= MIN_POMODORO_TIME
 
         if (meetsMinTime) {
+          console.log('Saving stats on mode switch')
           saveAccumulatedStats()
           emit('update-stats')
         }
@@ -295,7 +303,7 @@ export default {
       }, 30000)
     }
 
-    // 添加停止处理
+    // 修改停止处理
     const handleStop = () => {
       const totalTime = accumulatedTime.value + elapsedTime.value
       const isBreakMode = currentMode.value === 'shortBreak' || currentMode.value === 'longBreak'
@@ -303,9 +311,11 @@ export default {
         totalTime >= MIN_BREAK_TIME :
         totalTime >= MIN_POMODORO_TIME
 
-      if (meetsMinTime) {
+      if (meetsMinTime && !lastSessionSaved.value) {
+        console.log('Saving stats on stop')
         saveAccumulatedStats()
         emit('update-stats')
+        lastSessionSaved.value = true  // 标记为已保存
       }
 
       // 重置所有状态
@@ -343,6 +353,7 @@ export default {
         totalTime >= MIN_POMODORO_TIME
 
       if (meetsMinTime) {
+        console.log('Saving stats on mode change')
         saveAccumulatedStats()
         emit('update-stats')
       }
@@ -375,11 +386,13 @@ export default {
       console.log('Saving accumulated stats:', {
         userId,
         today,
+        time: `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`,
         currentMode: currentMode.value,
-        accumulatedTime: accumulatedTime.value
+        accumulatedTime: accumulatedTime.value,
+        elapsedTime: elapsedTime.value
       })
 
-      const totalTime = Math.floor(accumulatedTime.value / 60)
+      const totalTime = Math.floor(elapsedTime.value / 60)
       if (currentMode.value === 'pomodoro' && accumulatedTime.value >= MIN_POMODORO_TIME) {
         stats[today].pomodoro++
         stats[today].focusMinutes += totalTime
@@ -482,13 +495,16 @@ export default {
     })
 
     onUnmounted(() => {
-      // Save stats if session was complete but not saved
+      // 只有在会话完成且未保存的情况下才保存
       if (sessionComplete.value && !lastSessionSaved.value) {
-        if (currentMode.value === 'pomodoro') {
-          if (accumulatedTime.value >= 300) {
-            saveAccumulatedStats()
-          }
-        } else {
+        console.log('Saving stats on unmount')
+        const totalTime = accumulatedTime.value
+        const isBreakMode = currentMode.value === 'shortBreak' || currentMode.value === 'longBreak'
+        const meetsMinTime = isBreakMode ?
+          totalTime >= MIN_BREAK_TIME :
+          totalTime >= MIN_POMODORO_TIME
+
+        if (meetsMinTime) {
           saveAccumulatedStats()
         }
       }

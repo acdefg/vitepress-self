@@ -74,10 +74,10 @@ export default {
     const getLocalStorage = (key) => {
       try {
         const item = localStorage.getItem(key)
-        return item ? JSON.parse(item) : null
+        return item ? JSON.parse(item) : {}
       } catch (e) {
         console.error('Error reading from localStorage:', e)
-        return null
+        return {}
       }
     }
 
@@ -171,8 +171,13 @@ export default {
       console.log('Current user:', user);
 
       const statsKey = user ? `stats_${user.id}` : 'anonymous_stats';
-      const statsData = getLocalStorage(statsKey);
+      let statsData = getLocalStorage(statsKey) || {};
       console.log('Retrieved stats:', { key: statsKey, data: statsData });
+
+      // 确保 statsData 不是 undefined 或 null
+      if (!statsData || typeof statsData !== 'object') {
+        statsData = {};
+      }
 
       // 创建标准化范围数据
       const range = {};
@@ -193,20 +198,18 @@ export default {
       }
 
       // 合并和规范化实际数据
-      if (statsData) {
-        Object.entries(statsData).forEach(([date, data]) => {
-          if (range[date]) {
-            range[date] = {
-              pomodoro: data.pomodoro || 0,
-              shortBreak: data.shortBreak || 0,
-              longBreak: data.longBreak || 0,
-              focusMinutes: data.focusMinutes || 0,
-              breakMinutes: data.breakMinutes || 0,
-              totalMinutes: (data.focusMinutes || 0) + (data.breakMinutes || 0)
-            };
-          }
-        });
-      }
+      Object.entries(statsData).forEach(([date, data]) => {
+        if (range[date] && data) {
+          range[date] = {
+            pomodoro: data.pomodoro || 0,
+            shortBreak: data.shortBreak || 0,
+            longBreak: data.longBreak || 0,
+            focusMinutes: data.focusMinutes || 0,
+            breakMinutes: data.breakMinutes || 0,
+            totalMinutes: (data.focusMinutes || 0) + (data.breakMinutes || 0)
+          };
+        }
+      });
 
       console.log('Processed range data:', range);
       currentStats.value = range;
