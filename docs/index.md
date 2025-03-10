@@ -20,7 +20,7 @@ features:
   - icon: 📖
     title: 知识仓库
     details: 整理日常学习的知识点<small>（数字IC、模拟IC、体系结构等）</small><br />积少成多，化零为整
-    link: 
+    link: ./tags
     linkText: 知识库导航
   - icon: 🤖
     title: 项目整理
@@ -32,10 +32,10 @@ features:
     details: 工欲善其事，必先利其器<br />记录开发和日常使用中所用到的软件、插件、扩展等
     link: 
     linkText: 常用工具库
-  - icon: 💯
+  - icon: 🍅
     title: 番茄钟
-    details: '<small class="bottom-small">一个想躺平的小开发</small>'
-    link: 
+    details: '<small class="bottom-small">自制一个可以延时的番茄钟</small>'
+    link: ./pomodoro
     linkText: Pomodoro
 ---
 

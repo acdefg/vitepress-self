@@ -8,8 +8,8 @@
         <div class="d-flex align-items-center mt-3">
           <button @click="showReport" class="btn btn-link nav-link">统计</button>
           <button @click="showSettings" class="btn btn-link nav-link">设置</button>
-          <button @click="showRoom" class="btn btn-link nav-link">自习室</button>
-          <button @click="showWishWall" class="btn btn-link nav-link">许愿墙</button>
+          <!-- <button @click="showRoom" class="btn btn-link nav-link">自习室</button>
+          <button @click="showWishWall" class="btn btn-link nav-link">许愿墙</button> -->
           <div class="user-menu-container">
             <button @click="toggleUserMenu" class="btn user-menu" :class="{ 'logged-in': currentUser }">
               <span v-if="currentUser">{{ currentUser.username }}</span>
