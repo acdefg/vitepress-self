@@ -254,15 +254,22 @@ export default {
     };
 
     const handleStatsUpdate = (updatedStats) => {
-      console.log('Handling stats update:', updatedStats);
-      // Update local storage
       const userId = currentUser.value?.id || 'anonymous';
       const storageKey = userId === 'anonymous' ? 'anonymous_stats' : `stats_${userId}`;
-      localStorage.setItem(storageKey, JSON.stringify(updatedStats));
 
-      // Update current stats
-      currentStats.value = updatedStats;
-      console.log('Updated stats:', currentStats.value);
+      if (updatedStats) {
+        localStorage.setItem(storageKey, JSON.stringify(updatedStats));
+        currentStats.value = updatedStats;
+
+        // 如果报告模态框打开，刷新日期范围数据
+        if (showReportModal.value) {
+          const startDate = localStorage.getItem('reportStartDate');
+          const endDate = localStorage.getItem('reportEndDate');
+          if (startDate && endDate) {
+            handleReportData(startDate, endDate);
+          }
+        }
+      }
     };
 
     const logout = () => {

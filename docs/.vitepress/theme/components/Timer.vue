@@ -116,8 +116,12 @@ export default {
     }))
 
     const requestNotificationPermission = async () => {
+      console.log('请求通知权限')
       if (Notification.permission !== 'granted') {
-        await Notification.requestPermission()
+        Notification.requestPermission().then(permission => {
+          console.log('用户权限:', permission);
+        }
+        );
       }
     }
 
@@ -154,6 +158,9 @@ export default {
         }, 1000)
       }
       isRunning.value = !isRunning.value
+
+      requestNotificationPermission()
+      console.log('Toggle timer:', isRunning.value)
     }
 
     // 修改重置/停止处理
@@ -167,7 +174,8 @@ export default {
         totalTime >= MIN_BREAK_TIME :
         totalTime >= MIN_POMODORO_TIME
 
-      if (sessionComplete.value && !lastSessionSaved.value && meetsMinTime) {
+      // self delete condition ： sessionComplete.value = false
+      if (!lastSessionSaved.value && meetsMinTime) {
         saveAccumulatedStats()
         emit('update-stats')
       }
@@ -275,13 +283,8 @@ export default {
       //startTime.value = Date.now()
       //elapsedTime.value = 0 // 重置 elapsedTime，因为我们要开始新的计时
 
-      // 发送通知
-      if (Notification.permission === 'granted') {
-        new Notification('番茄钟提醒', {
-          body: `${currentMode.value === 'pomodoro' ? '专注' : '休息'}时间结束！`,
-          icon: '/favicon.ico'
-        })
-      }
+      showNotification()
+
       playNotificationBeeps()
 
       showContinuePrompt.value = true
@@ -354,50 +357,45 @@ export default {
 
       const now = new Date()
       const today = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
-
-      console.log('Saving stats for date:', today)
       const userId = props.currentUser?.id || 'anonymous'
+      const storageKey = userId === 'anonymous' ? 'anonymous_stats' : `stats_${userId}`
 
-      let stats = userId === 'anonymous' ?
-        JSON.parse(localStorage.getItem('anonymous_stats') || '{}') :
-        JSON.parse(localStorage.getItem(`stats_${userId}`) || '{}')
-
+      let stats = JSON.parse(localStorage.getItem(storageKey) || '{}')
       if (!stats[today]) {
         stats[today] = {
           pomodoro: 0,
           shortBreak: 0,
           longBreak: 0,
-          focusMinutes: 0,  // 专注时间
-          breakMinutes: 0,   // 休息时间
-          totalMinutes: 0    // 总时间
+          focusMinutes: 0,
+          breakMinutes: 0,
+          totalMinutes: 0
         }
       }
 
-      // 区分专注时间和休息时间
+      console.log('Saving accumulated stats:', {
+        userId,
+        today,
+        currentMode: currentMode.value,
+        accumulatedTime: accumulatedTime.value
+      })
+
+      const totalTime = Math.floor(accumulatedTime.value / 60)
       if (currentMode.value === 'pomodoro' && accumulatedTime.value >= MIN_POMODORO_TIME) {
         stats[today].pomodoro++
-        stats[today].focusMinutes += Math.floor(accumulatedTime.value / 60)
-      } else if (currentMode.value === 'shortBreak' && accumulatedTime.value >= MIN_BREAK_TIME) {
-        stats[today].shortBreak++
-        stats[today].breakMinutes += Math.floor(accumulatedTime.value / 60)
-      } else if (currentMode.value === 'longBreak' && accumulatedTime.value >= MIN_BREAK_TIME) {
-        stats[today].longBreak++
-        stats[today].breakMinutes += Math.floor(accumulatedTime.value / 60)
+        stats[today].focusMinutes += totalTime
+      } else if (accumulatedTime.value >= MIN_BREAK_TIME) {
+        if (currentMode.value === 'shortBreak') {
+          stats[today].shortBreak++
+          stats[today].breakMinutes += totalTime
+        } else if (currentMode.value === 'longBreak') {
+          stats[today].longBreak++
+          stats[today].breakMinutes += totalTime
+        }
       }
 
-      // 更新总时间
       stats[today].totalMinutes = stats[today].focusMinutes + stats[today].breakMinutes
-
-      console.log('Updated stats:', stats[today])
-
-      if (userId === 'anonymous') {
-        localStorage.setItem('anonymous_stats', JSON.stringify(stats))
-        localStorage.setItem('anonymous_stats_date', today)
-      } else {
-        localStorage.setItem(`stats_${userId}`, JSON.stringify(stats))
-      }
-
-      emit('update-stats')
+      localStorage.setItem(storageKey, JSON.stringify(stats))
+      emit('update-stats', stats)
     }
 
     const saveStats = () => {
@@ -458,6 +456,21 @@ export default {
 
       // Emit stats update
       emit('update-stats')
+    }
+
+    const showNotification = async () => {
+      const hasPermission = await requestNotificationPermission();
+
+      if (hasPermission) {
+        try {
+          new Notification('番茄钟提醒', {
+            body: `${currentMode.value === 'pomodoro' ? '专注' : '休息'}时间结束！`,
+            icon: '/icons/tomato.png'
+          });
+        } catch (error) {
+          console.error('发送通知时出错:', error);
+        }
+      }
     }
 
     // Initialize component with reset timer
@@ -625,6 +638,7 @@ export default {
 
 .continue-btn,
 .stop-btn,
+.break-btn,
 .next-btn {
   padding: 0.8rem 1.5rem;
   border: none;

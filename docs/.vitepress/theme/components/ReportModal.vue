@@ -55,7 +55,7 @@
               <div class="card">
                 <div class="card-body">
                   <h6 class="card-title">专注趋势</h6>
-                  <canvas ref="trendChartRef"></canvas>
+                  <canvas class="canvas-c" ref="trendChartRef"></canvas>
                 </div>
               </div>
             </div>
@@ -63,7 +63,7 @@
               <div class="card">
                 <div class="card-body">
                   <h6 class="card-title">时间分配</h6>
-                  <canvas ref="pieChartRef"></canvas>
+                  <canvas class="canvas-c" ref="pieChartRef"></canvas>
                 </div>
               </div>
             </div>
@@ -343,7 +343,7 @@ export default {
           // Prepare trend data
           const trendData = dates.map(date => {
             const minutes = stats.value[date]?.focusMinutes || 0
-            console.log(`Date ${date}: ${minutes} minutes`)
+            //console.log(`Date ${date}: ${minutes} minutes`)
             return {
               date: formatDate(date),
               minutes: minutes
@@ -396,13 +396,13 @@ export default {
           // Calculate totals
           const totalFocusMinutes = dates.reduce((sum, date) => {
             const minutes = stats.value[date]?.focusMinutes || 0
-            console.log(`Date ${date} focus minutes: ${minutes}`)
+            // console.log(`Date ${date} focus minutes: ${minutes}`)
             return sum + minutes
           }, 0)
 
           const totalBreakMinutes = dates.reduce((sum, date) => {
             const minutes = stats.value[date]?.breakMinutes || 0
-            console.log(`Date ${date} break minutes: ${minutes}`)
+            // console.log(`Date ${date} break minutes: ${minutes}`)
             return sum + minutes
           }, 0)
 
@@ -474,10 +474,8 @@ export default {
 
     const toggleEditMode = () => {
       if (isEditing.value) {
-        // 对数据进行处理和验证
         const processedStats = {};
         Object.entries(editedStats.value).forEach(([date, data]) => {
-          // 修改次数逻辑
           const focusCount = data.focusMinutes > 0 ? Math.max(1, data.pomodoro || 0) : 0;
           const shortBreakCount = data.breakMinutes > 0 ? Math.max(1, data.shortBreak || 0) : 0;
           const longBreakCount = data.breakMinutes > 0 ? Math.max(1, data.longBreak || 0) : 0;
@@ -486,23 +484,17 @@ export default {
             pomodoro: focusCount,
             shortBreak: shortBreakCount,
             longBreak: longBreakCount,
-            focusMinutes: data.focusMinutes || 0,
-            breakMinutes: data.breakMinutes || 0,
-            // 总时间为专注时间和休息时间的总和
-            totalMinutes: (data.focusMinutes || 0) + (data.breakMinutes || 0)
+            focusMinutes: Math.max(0, data.focusMinutes || 0),
+            breakMinutes: Math.max(0, data.breakMinutes || 0),
+            totalMinutes: Math.max(0, (data.focusMinutes || 0) + (data.breakMinutes || 0))
           };
         });
 
-        console.log('Saving processed stats:', processedStats);
-        emit('save-stats', processedStats);
-        // 更新本地数据
         stats.value = processedStats;
-        // 重新计算总计数据
-        totalStats.value = calculateTotalStats(stats.value);
-        // 更新图表
+        totalStats.value = calculateTotalStats(processedStats);
+        emit('save-stats', processedStats);
         updateCharts();
       } else {
-        // 进入编辑模式
         editedStats.value = JSON.parse(JSON.stringify(stats.value));
       }
       isEditing.value = !isEditing.value;
@@ -689,6 +681,10 @@ export default {
 
 canvas {
   width: 100% !important;
+  /* height: 250px !important; */
+}
+
+.canvas-c {
   height: 250px !important;
 }
 
@@ -981,6 +977,7 @@ canvas {
   width: 80px;
   text-align: center;
 }
+
 .form-control-sm {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
