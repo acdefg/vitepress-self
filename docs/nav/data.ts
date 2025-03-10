@@ -10,7 +10,7 @@ export const NAV_DATA: NavData[] = [
     title: '知识仓库导航',
     items: [
       {
-        icon: '/logo.png',
+        icon: '/icons/chip.png',
         title: '数字IC',
         link: '../categories/digital/index',
       },
@@ -20,8 +20,8 @@ export const NAV_DATA: NavData[] = [
     title: '小应用开发',
     items: [
       {
-        icon: '/logo.png',
-        title: 'pomodoro',
+        icon: '/icons/tomato.png',
+        title: 'pomodoro clock',
         link: '../pomodoro',
       },
     ],
@@ -58,25 +58,37 @@ export const NAV_DATA: NavData[] = [
         desc: '待学习。。。',
         link: 'https://www.beautiful.ai',
       },
+      {
+        icon:'https://statics.moonshot.cn/kimi-chat/favicon.ico',
+        title: 'Kimi Chat',
+        desc: '快速简单，很多时候不太聪明',
+        link: 'https://kimi.moonshot.cn/',
+      }
     ],
   },
 
   {
     
-    title: '常用网站',
+    title: '待学习清单',
     items: [
       {
-        icon: 'https://qwerty.fe-mm.com/apple-touch-icon.png',
-        title: 'Qwerty Learner',
-        desc: '为键盘工作者设计的单词记忆与英语肌肉记忆锻炼软件',
-        link: 'https://qwerty.fe-mm.com',
+        icon: '/icons/bilibili.png',
+        title: '拜托三连了！这绝对是全B站最用心（没有之一）的Lr公开课程，调光调色就靠它！',
+        desc: '摄影，调色，有空就看看',
+        link: 'https://www.bilibili.com/video/BV1g64y1474s?spm_id_from=333.788.player.switch&vd_source=f8bf73f9a2b495eaf6f8446fa6016bc7&p=2',
       },
       {
-        icon: 'https://caniuse.com/img/favicon-128.png',
-        title: 'Can I use',
-        desc: '前端 API 兼容性查询',
-        link: 'https://caniuse.com',
-      },
+        icon: '/icons/bilibili.png',
+        title: '零基础AI全栈开发系列',
+        desc: '时间短，内容简单，搞清楚概念就行',
+        link: 'https://www.bilibili.com/video/BV18M4m1C7tD/?spm_id_from=333.788.top_right_bar_window_history.content.click&vd_source=f8bf73f9a2b495eaf6f8446fa6016bc7',
+      }
+    ],
+  },
+  
+  {
+  title: '在线工具',
+  items: [
       {
         icon: 'https://tinypng.com/images/apple-touch-icon.png',
         title: 'TinyPNG',
@@ -91,9 +103,9 @@ export const NAV_DATA: NavData[] = [
       },
       {
         icon: 'https://tool.lu/favicon.ico',
-        title: '在线工具',
-        desc: '开发人员的工具箱',
-        link: 'https://tool.lu',
+        title: '在线latex公式编辑器',
+        desc: 'markdown公式转word用这个',
+        link: 'https://www.latexlive.com/',
       },
       {
         icon: '/icons/json-cn.ico',
