@@ -82,6 +82,12 @@ export const NAV_DATA: NavData[] = [
         title: '零基础AI全栈开发系列',
         desc: '时间短，内容简单，搞清楚概念就行',
         link: 'https://www.bilibili.com/video/BV18M4m1C7tD/?spm_id_from=333.788.top_right_bar_window_history.content.click&vd_source=f8bf73f9a2b495eaf6f8446fa6016bc7',
+      },
+      {
+        icon: '/icons/bilibili.png',
+        title: '【教程-30分钟速通LaTeX】LaTeX排版零基础速成教程，数学建模美赛/科研论文必看视频！！（附赠美赛LaTex模板）',
+        desc: '有空看一下',
+        link: 'https://www.bilibili.com/video/BV1Mc411S75c?spm_id_from=333.788.player.switch&vd_source=f8bf73f9a2b495eaf6f8446fa6016bc7&p=2',
       }
     ],
   },
